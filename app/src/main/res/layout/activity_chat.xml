@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layoutChatActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<TextView
+    android:layout_width="wrap_content"
+    android:id="@+id/textViewChat"
+    android:layout_height="wrap_content"
+    android:textAlignment="center"
+    android:text="@string/chat"
+    style="@style/SmallHeader"
+    android:gravity="center"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    ></TextView>
+    <ListView
+        android:layout_width="match_parent"
+        android:id="@+id/mainListView"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textViewChat"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/editTextMessage"
+            android:layout_weight="1"
+            android:background="@color/fontColorButtons"
+            ></EditText>
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:onClick="sendMessage"
+            android:background="@drawable/arrow"
+            ></Button>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

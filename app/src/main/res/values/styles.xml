@@ -1,0 +1,95 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="ButtonStyleMainMenu">
+
+        <item name="android:background">@color/buttonColor</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/fontColorButtons</item>
+
+    </style>
+
+
+
+
+    <style name="ButtonStyleForGames">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:backgroundTint">@drawable/btn_blue</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/fontColorButtons</item>
+
+
+    </style>
+
+    <style name="BigHeader">
+
+        <item name = "android:layout_width"> wrap_content</item>
+        <item name = "android:layout_height"> wrap_content</item>
+        <item name = "android:layout_marginTop"> 25dp</item>
+        <item name = "android:fontFamily"> casual</item>
+        <item name = "android:textColor"> @color/titleColor</item>
+        <item name = "android:textSize"> 55dp</item>
+        <item name = "android:textStyle"> bold</item>
+
+
+    </style>
+
+    <style name="SmallHeader">
+
+        <item name = "android:layout_width"> wrap_content</item>
+        <item name="android:textAlignment"> center</item>
+        <item name = "android:layout_height"> wrap_content</item>
+        <item name = "android:fontFamily"> casual</item>
+        <item name = "android:textColor">@color/fontColorButtons</item>
+        <item name = "android:textSize"> 25dp</item>
+        <item name = "android:textStyle"> italic</item>
+
+
+    </style>
+
+    <style name="textChatSender">
+
+        <item name = "android:layout_width"> wrap_content</item>
+        <item name = "android:layout_height"> wrap_content</item>
+        <item name = "android:fontFamily">times</item>
+        <item name = "android:textColor">@color/fontColorButtons</item>
+        <item name = "android:textSize"> 20dp</item>
+        <item name = "android:textStyle"> italic</item>
+
+
+    </style>
+
+    <style name="textChatMessage">
+
+        <item name = "android:layout_width"> wrap_content</item>
+        <item name = "android:layout_height"> wrap_content</item>
+        <item name = "android:fontFamily"> times</item>
+        <item name = "android:textColor">@color/fontColorButtons</item>
+        <item name = "android:textSize"> 20dp</item>
+        <item name = "android:textStyle"> normal</item>
+
+
+    </style>
+
+
+</resources>

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layoutAsocijacije"
+    android:background="@color/backgroundColor"
+    tools:context=".Activities.Games.AsocijacijeGame">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/SmallHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/asocijacije"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+
+            <TextView
+                style="@style/SmallHeader"
+                android:id="@+id/textViewTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_marginRight="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+            </TextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button_A1Game_6"
+                    style="@style/ButtonStyleForGames"
+                    android:background="@drawable/field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="openField">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/button_A2Game_6"
+                    style="@style/ButtonStyleForGames"
+                    android:background="@drawable/field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="openField">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/button_A3Game_6"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/field"
+                    android:layout_height="wrap_content"
+                    android:onClick="openField">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/button_A4Game_6"
+                    style="@style/ButtonStyleForGames"
+                    android:background="@drawable/field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="openField">
+
+                </Button>
+
+                <EditText
+                    android:id="@+id/editText_AGame_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:tooltipText="Колона А">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button_B1Game_6"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/field"
+                    android:onClick="openField">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/button_B2Game_6"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/field"
+                    android:onClick="openField">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/button_B3Game_6"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/field"
+                    android:onClick="openField">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/button_B4Game_6"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/field"
+                    android:onClick="openField">
+
+                </Button>
+
+                <EditText
+                    android:id="@+id/editText_BGame_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:tooltipText="Колона Б">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button_C1Game_6"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/field"
+                    android:onClick="openField">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/button_C2Game_6"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/field"
+                    android:onClick="openField">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/button_C3Game_6"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/field"
+                    android:onClick="openField">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/button_C4Game_6"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/field"
+                    android:onClick="openField">
+
+                </Button>
+
+                <EditText
+                    android:id="@+id/editText_CGame_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:tooltipText="Колона Ц">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button_D1Game_6"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/field"
+                    android:onClick="openField">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/button_D2Game_6"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/field"
+                    android:onClick="openField">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/button_D3Game_6"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/field"
+                    android:onClick="openField">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/button_D4Game_6"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/field"
+                    android:onClick="openField">
+
+                </Button>
+
+                <EditText
+                    android:id="@+id/editText_DGame_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:tooltipText="Колона Д">
+
+                </EditText>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/main_solution"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textAlignment="center"
+                android:tooltipText="Коначно решење"></EditText>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

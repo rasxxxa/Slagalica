@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutMojBroj"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:orientation="vertical"
+    tools:context=".Activities.Games.MojBrojGame">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/SmallHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/moj_broj"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+
+            <TextView
+                style="@style/SmallHeader"
+                android:id="@+id/textViewTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_marginEnd="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+            </TextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_1Game_2"
+                style="@style/ButtonStyleForGames"
+                android:background="@drawable/field"
+                android:clickable="false"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_2Game_2"
+                android:background="@drawable/field"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:onClick="numberClick"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button_3Game_2"
+                android:background="@drawable/field"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:onClick="numberClick"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button_4Game_2"
+                android:background="@drawable/field"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:onClick="numberClick"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button_5Game_2"
+                android:background="@drawable/field"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:onClick="numberClick"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button_6Game_2"
+                android:background="@drawable/field"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:onClick="numberClick"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button_7Game_2"
+                android:background="@drawable/field"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:onClick="numberClick"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_8Game_2"
+                android:background="@drawable/field"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:onClick="operationClick"
+                android:text="@string/plusSign" />
+
+            <Button
+                android:id="@+id/button_9Game_2"
+                android:background="@drawable/field"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:onClick="operationClick"
+                android:text="@string/minusSign" />
+
+            <Button
+                android:id="@+id/button_10Game_2"
+                android:background="@drawable/field"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:onClick="operationClick"
+                android:text="@string/multiplySign" />
+
+            <Button
+                android:id="@+id/button_11ame_2"
+                android:background="@drawable/field"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:onClick="operationClick"
+                android:text="@string/divideSign" />
+
+            <Button
+                android:id="@+id/button_12Game_2"
+                android:background="@drawable/field"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:onClick="operationClick"
+                android:text="@string/parenthesisLeft" />
+
+            <Button
+                android:id="@+id/button_13Game_2"
+                android:background="@drawable/field"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:onClick="operationClick"
+                android:text="@string/parenthesisRight" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_14Game_2"
+                android:background="@drawable/field"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:onClick="submit"
+                android:text="@string/okMark" />
+
+            <Button
+                android:id="@+id/button_15Game_2"
+                android:background="@drawable/field"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:onClick="cClick"
+                android:text="@string/cMark" />
+
+            <Button
+                android:id="@+id/button_16Game_2"
+                android:background="@drawable/field"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:onClick="xClick"
+                android:text="@string/xMark" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView1_Game2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="@string/resultMojBroj" />
+
+            <TextView
+                android:id="@+id/textView2_Game2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/editText_1Game_2"
+                android:layout_width="match_parent"
+                android:textSize="15dp"
+                android:textStyle="italic"
+                android:textAlignment="center"
+                android:enabled="false"
+                android:layout_height="wrap_content">
+
+            </EditText>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

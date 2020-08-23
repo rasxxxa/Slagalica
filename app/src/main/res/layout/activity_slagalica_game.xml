@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutSlagalica"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".Activities.Games.SlagalicaGame">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/SmallHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/slagalica"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+
+            <TextView
+                style="@style/SmallHeader"
+                android:id="@+id/textViewTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_marginRight="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+            </TextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/button_1Game_1"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:background="@drawable/field"
+                android:onClick="onClickLetterButton"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button_2Game_1"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:background="@drawable/field"
+                android:onClick="onClickLetterButton"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button_3Game_1"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:background="@drawable/field"
+                android:onClick="onClickLetterButton"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button_4Game_1"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:background="@drawable/field"
+                android:onClick="onClickLetterButton"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button_5Game_1"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:background="@drawable/field"
+                android:onClick="onClickLetterButton"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button_6Game_1"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:background="@drawable/field"
+                android:onClick="onClickLetterButton"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_7Game_1"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:background="@drawable/field"
+                android:onClick="onClickLetterButton"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button_8Game_1"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:background="@drawable/field"
+                android:onClick="onClickLetterButton"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button_9Game_1"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:background="@drawable/field"
+                android:onClick="onClickLetterButton"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button_10Game_1"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:background="@drawable/field"
+                android:onClick="onClickLetterButton"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button_11Game_1"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:background="@drawable/field"
+                android:onClick="onClickLetterButton"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button_12Game_1"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:background="@drawable/field"
+                android:onClick="onClickLetterButton"
+                android:text="" />
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editText1_Game1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+
+            android:background="@color/transparent"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textPersonName"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/fontColorButtons"
+            android:textSize="40dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonCheck_Game1"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:background="@drawable/field"
+                android:onClick="checkWord"
+                android:text="@string/questionMark">
+
+            </Button>
+
+            <Button
+                android:id="@+id/buttonConfirm_Game1"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:background="@drawable/field"
+                android:onClick="submit"
+                android:text="@string/okMark"
+                android:textColor="#00FF00"
+
+                >
+
+            </Button>
+
+            <Button
+                android:id="@+id/buttonDelete_Game1"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:background="@drawable/field"
+                android:onClick="eraseAll"
+                android:text="@string/xMark"
+                android:textColor="#FF0000">
+
+            </Button>
+
+            <Button
+                android:id="@+id/buttonClear_Game1"
+                style="@style/ButtonStyleForGames"
+                android:layout_weight="1"
+                android:background="@drawable/field"
+                android:onClick="deleteLetter"
+                android:text="@string/cMark">
+
+            </Button>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

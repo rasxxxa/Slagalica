@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "591995277459",
+    "firebase_url": "https://slagalica-450c1.firebaseio.com",
+    "project_id": "slagalica-450c1",
+    "storage_bucket": "slagalica-450c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591995277459:android:6bc27c5c87803e43d1fd66",
+        "android_client_info": {
+          "package_name": "com.example.slagalica"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "591995277459-ahugsr77p2dqtcuou3am3rvpvfsjcacl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.slagalica",
+            "certificate_hash": "98d87d44e06fc6de4c456018ba652eba818db88f"
+          }
+        },
+        {
+          "client_id": "591995277459-ju9bvilt8j0cqjcvelnu1fpphm5thrn8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATs5fW4nzymsAUf7OlKaNUIHQ4ueb4fHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "591995277459-ju9bvilt8j0cqjcvelnu1fpphm5thrn8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

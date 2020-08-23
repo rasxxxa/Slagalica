@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="numberOfLetters">12</integer>
+    <integer name="timeGame1">60</integer>
+    <integer name="timeGame2">60</integer>
+    <integer name="timeGame3">60</integer>
+    <integer name="timeGame4">30</integer>
+    <integer name="timeGame5">120</integer>
+    <integer name="timeGame6">120</integer>
+    <integer name="clockInterval">1</integer>
+    <integer name="numberOfNumbers">7</integer>
+    <integer name="pointsCorrectSolution">10</integer>
+    <integer name="pointsNearSolution">5</integer>
+    <integer name="differenceToSoltuion">10</integer>
+    <integer name="numOfColumnsGame3">4</integer>
+    <integer name="numOfRowsGame3">6</integer>
+    <integer name="additionalButtonsGame3">8</integer>
+    <integer name="maxPointGame3">35</integer>
+    <integer name="rowMultiplierGame3">5</integer>
+    <integer name="sizeOfImageGame3">100</integer>
+    <integer name="sizeofImageAdditionalGame3">100</integer>
+    <integer name="sizeInAlertDialogGame3">20</integer>
+    <integer name="numberOfElementsInRowGame4">8</integer>
+    <integer name="pointsOneCorrectGame4">2</integer>
+    <integer name="numberOfAnswersGame5">4</integer>
+    <integer name="numberOfQuestionsGame5">10</integer>
+    <integer name="correctAnswerPoints">5</integer>
+    <integer name="wrongAnswerPenalty">-3</integer>
+    <integer name="pointsFieldGame6">1</integer>
+    <integer name="pointsColumnGame6">3</integer>
+    <integer name="pointsMainSolutionGame6">7</integer>
+    <integer name="typeOfPlayerHost">1</integer>
+    <integer name="typeOfPlayerGuest">2</integer>
+    <integer name="idleTimeInMultiplayer">99999600</integer>
+</resources>

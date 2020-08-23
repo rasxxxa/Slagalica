@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
+    android:layout_marginBottom="50dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            style="@style/textChatMessage"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/nameMultiplayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/textChatSender"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lastname"
+            style="@style/textChatMessage"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/lastNameMultiplayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/textChatSender"
+            ></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/username"
+            style="@style/textChatMessage"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/usernameMultiplayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/textChatSender"
+            ></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content">
+
+    <Button
+        style="@style/ButtonStyleMainMenu"
+        android:id="@+id/buttonChallenge"
+        android:width="200dp"
+        android:layout_gravity="center"
+
+        android:text="@string/challenge"></Button>
+    </LinearLayout>
+
+
+    </LinearLayout>

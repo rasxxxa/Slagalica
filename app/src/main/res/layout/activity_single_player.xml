@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutSinglePlayer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:orientation="horizontal"
+    tools:context=".Activities.MainMenu.SinglePlayerActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/textViewGames"
+                style="@style/SmallHeader"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/games"
+                android:textStyle="italic"></TextView>
+
+            <TextView
+                android:id="@+id/textViewMainPlayer"
+                style="@style/SmallHeader"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mainPlayer"
+                android:textStyle="italic"></TextView>
+
+            <TextView
+                android:id="@+id/textViewOpponent"
+                style="@style/SmallHeader"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/Opponent"
+                android:textStyle="italic"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_height="40dp">
+
+            <Button
+                android:id="@+id/buttonGame1"
+                style="@style/ButtonStyleMainMenu"
+                android:layout_width="50dp"
+                android:onClick="startSlagalica"
+                android:text="@string/slagalica" />
+
+            <TextView
+                android:id="@+id/Game_1MainPlayerPoints"
+                style="@style/SmallHeader"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textStyle="italic"></TextView>
+
+            <TextView
+                style="@style/SmallHeader"
+                android:id="@+id/Game_1OpponentPoints"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textStyle="italic"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_height="40dp">
+
+            <Button
+                android:id="@+id/buttonGame2"
+                style="@style/ButtonStyleMainMenu"
+                android:layout_width="50dp"
+                android:onClick="startMojBroj"
+                android:text="@string/moj_broj" />
+
+            <TextView
+                style="@style/SmallHeader"
+                android:id="@+id/Game_2MainPlayerPoints"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textStyle="italic"></TextView>
+
+            <TextView
+                style="@style/SmallHeader"
+                android:id="@+id/Game_2OpponentPoints"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textStyle="italic"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_height="40dp">
+
+            <Button
+                android:id="@+id/buttonGame3"
+                style="@style/ButtonStyleMainMenu"
+                android:onClick="startSpojnice"
+                android:layout_width="50dp"
+                android:text="@string/spojnice" />
+
+            <TextView
+                style="@style/SmallHeader"
+                android:id="@+id/Game_3MainPlayerPoints"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textStyle="italic"></TextView>
+
+            <TextView
+                style="@style/SmallHeader"
+                android:id="@+id/Game_3OpponentPoints"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textStyle="italic"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_height="40dp">
+
+            <Button
+                android:id="@+id/buttonGame4"
+                style="@style/ButtonStyleMainMenu"
+                android:onClick="startSkocko"
+                android:layout_width="50dp"
+                android:text="@string/sko_ko" />
+
+            <TextView
+                style="@style/SmallHeader"
+                android:id="@+id/Game_4MainPlayerPoints"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textStyle="italic"></TextView>
+
+            <TextView
+                style="@style/SmallHeader"
+                android:id="@+id/Game_4OpponentPoints"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textStyle="italic"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_height="40dp">
+
+            <Button
+                android:id="@+id/buttonGame5"
+                style="@style/ButtonStyleMainMenu"
+                android:onClick="startKoZnaZna"
+                android:layout_width="50dp"
+                android:text="@string/ko_zna_zna" />
+
+            <TextView
+                style="@style/SmallHeader"
+                android:id="@+id/Game_5MainPlayerPoints"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textStyle="italic"></TextView>
+
+            <TextView
+                style="@style/SmallHeader"
+                android:id="@+id/Game_5OpponentPoints"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textStyle="italic"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_height="40dp">
+
+            <Button
+                android:id="@+id/buttonGame6"
+                style="@style/ButtonStyleMainMenu"
+                android:onClick="startAsocijacije"
+                android:layout_width="50dp"
+                android:text="@string/asocijacije" />
+
+            <TextView
+                style="@style/SmallHeader"
+                android:id="@+id/Game_6MainPlayerPoints"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textStyle="italic"></TextView>
+
+            <TextView
+                style="@style/SmallHeader"
+                android:id="@+id/Game_6OpponentPoints"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textStyle="italic"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_height="40dp">
+
+            <Button
+                android:id="@+id/buttonGame7"
+                style="@style/ButtonStyleMainMenu"
+                android:layout_width="50dp"
+                android:layout_weight="1"
+                android:text="Ћаскање" />
+
+            <TextView
+                style="@style/SmallHeader"
+
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="italic"></TextView>
+
+            <TextView
+                style="@style/SmallHeader"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="italic"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_height="40dp">
+
+            <TextView
+                style="@style/SmallHeader"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sumPoints"
+                android:textStyle="italic"></TextView>
+
+            <TextView
+                style="@style/SmallHeader"
+                android:id="@+id/SumPointsMainPlayer"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textStyle="italic"></TextView>
+
+            <TextView
+                style="@style/SmallHeader"
+                android:id="@+id/SumPointsOpponent"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textStyle="italic"></TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textViewTitleInGame"
+        style="@style/BigHeader"
+        android:text="@string/igre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/layoutMainActivity"
+    android:layout_height="match_parent"
+    tools:context=".Activities.MainMenu.MainActivity"
+    android:orientation="horizontal"
+    android:background="@color/backgroundColor"
+    >
+
+    <TextView
+        android:id="@+id/textViewTitle1"
+        style="@style/BigHeader"
+        android:text="@string/slagalica"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="319dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45">
+
+        <Button
+            android:id="@+id/buttonSingleplayer"
+            style="@style/ButtonStyleMainMenu"
+            android:onClick="startSinglePlayer"
+            android:text="@string/jedan_igra" />
+
+        <Button
+            android:id="@+id/buttonMultiplayer"
+            style="@style/ButtonStyleMainMenu"
+            android:onClick="startMultiPlayer"
+            android:text="@string/dva_igra_a" />
+
+        <Button
+            style="@style/ButtonStyleMainMenu"
+            android:onClick="startSettings"
+            android:text="@string/pode_avanja" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewCredits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16sp"
+        android:text="@string/powered_by_radoica_nikoli"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        android:src="@drawable/slagalicarotate"
+        tools:srcCompat="@tools:sample/avatars" />
+</androidx.constraintlayout.widget.ConstraintLayout>
