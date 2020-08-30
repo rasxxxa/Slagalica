@@ -24,47 +24,7 @@ public class MultiPlayerActivity extends AppCompatActivity {
 
     private ConstraintLayout constraintLayout;
     private ArrayList<Player> players = new ArrayList<>();
-    private ValueEventListener listenerForPlayersOnline;
-    private ValueEventListener listenerForChallenge;
-    private ValueEventListener listenerForGame;
-    private ValueEventListener listenerChallengeResponse;
     private AlertDialog dialogAccept;
-    private DatabaseReference referenceGame;
-    private DatabaseReference referenceChallenger;
-    private DatabaseReference referenceChallenge;
-    private DatabaseReference referencePlayers;
-
-    public DatabaseReference getReferencePlayers() {
-        return referencePlayers;
-    }
-
-    public void setReferencePlayers(DatabaseReference referencePlayers) {
-        this.referencePlayers = referencePlayers;
-    }
-
-    public DatabaseReference getReferenceGame() {
-        return referenceGame;
-    }
-
-    public void setReferenceGame(DatabaseReference referenceGame) {
-        this.referenceGame = referenceGame;
-    }
-
-    public DatabaseReference getReferenceChallenger() {
-        return referenceChallenger;
-    }
-
-    public void setReferenceChallenger(DatabaseReference referenceChallenger) {
-        this.referenceChallenger = referenceChallenger;
-    }
-
-    public DatabaseReference getReferenceChallenge() {
-        return referenceChallenge;
-    }
-
-    public void setReferenceChallenge(DatabaseReference referenceChallenge) {
-        this.referenceChallenge = referenceChallenge;
-    }
 
     public AlertDialog getDialogAwait() {
         return dialogAwait;
@@ -96,14 +56,6 @@ public class MultiPlayerActivity extends AppCompatActivity {
         this.dialogAccept = dialog;
     }
 
-    public ValueEventListener getListenerChallengeResponse() {
-        return listenerChallengeResponse;
-    }
-
-    public void setListenerChallengeResponse(ValueEventListener listenerChallengeResponse) {
-        this.listenerChallengeResponse = listenerChallengeResponse;
-    }
-
     public void initialize() {
         mainListView = findViewById(R.id.listViewMultiplayer);
         searchView = findViewById(R.id.searchView);
@@ -111,12 +63,20 @@ public class MultiPlayerActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                if (players.size()==0)
+                {
+                    return false;
+                }
                 connectionController.getAdapter().getFilter().filter(query);
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
+                if (players.size()==0)
+                {
+                    return false;
+                }
                 connectionController.getAdapter().getFilter().filter(newText);
                 return false;
             }
@@ -129,35 +89,11 @@ public class MultiPlayerActivity extends AppCompatActivity {
         initializeListOfPlayers();
     }
 
-    public ValueEventListener getListenerForPlayersOnline() {
-        return listenerForPlayersOnline;
-    }
-
-    public void setListenerForPlayersOnline(ValueEventListener listenerForPlayersOnline) {
-        this.listenerForPlayersOnline = listenerForPlayersOnline;
-    }
-
-    public ValueEventListener getListenerForChallenge() {
-        return listenerForChallenge;
-    }
-
-    public void setListenerForChallenge(ValueEventListener listenerForChallenge) {
-        this.listenerForChallenge = listenerForChallenge;
-    }
-
-    public ValueEventListener getListenerForGame() {
-        return listenerForGame;
-    }
-
-    public void setListenerForGame(ValueEventListener listenerForGame) {
-        this.listenerForGame = listenerForGame;
-    }
-
     private void initializeListOfPlayers() {
         try {
 
-            listenerForPlayersOnline = connectionController.getOnlinePlayersListener(players, this, mainListView);
-            listenerForChallenge = connectionController.getChallengePlayer(this);
+            connectionController.getOnlinePlayersListener(players, this, mainListView);
+            connectionController.getChallengePlayer(this);
 
         } catch (Exception e) {
             Log.e(ErrorInfo.MultiPlayerActivity.getValue(), e.toString());
@@ -172,7 +108,7 @@ public class MultiPlayerActivity extends AppCompatActivity {
         super.onDestroy();
         // remove user from online list
         connectionController.removePlayerForOnline(this, MainActivity.player);
-        connectionController.removeResourcesMultiplayer(this);
+        connectionController.removeResourcesMultiplayer();
         if (dialogAccept != null)
         {
             dialogAccept.dismiss();

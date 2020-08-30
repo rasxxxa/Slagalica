@@ -91,7 +91,7 @@ public class DialogBuilder {
                 switch (which) {
                     case DialogInterface.BUTTON_POSITIVE:
                         ConnectionController.getInstance().acceptChallengeFrom(context);
-                        ((MultiPlayerActivity)context).setListenerForGame(ConnectionController.getInstance().createGameListener(context,player));
+                        ConnectionController.getInstance().setListenerForGame(ConnectionController.getInstance().createGameListener(context,player));
                         break;
                     case DialogInterface.BUTTON_NEGATIVE:
                         ConnectionController.getInstance().rejectChallengeFrom(context);

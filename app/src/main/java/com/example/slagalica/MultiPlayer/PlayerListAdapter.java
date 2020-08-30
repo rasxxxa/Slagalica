@@ -114,7 +114,7 @@ public class PlayerListAdapter extends ArrayAdapter<Player> {
             ConnectionController.getInstance().challengeSomeone(mContext,username, MainActivity.player);
                 ((MultiPlayerActivity)mContext).setDialogAwait(DialogBuilder.createWaitingAlert(username,mContext).create());
                 ((MultiPlayerActivity)mContext).getDialogAwait().show();
-                ((MultiPlayerActivity)mContext).setListenerChallengeResponse(ConnectionController.getInstance().waitingForAnswerListener(mContext,username));
+               ConnectionController.getInstance().setListenerChallengeResponse(ConnectionController.getInstance().waitingForAnswerListener(mContext,username));
             }
         });
 
