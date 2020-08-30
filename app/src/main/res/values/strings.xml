@@ -100,4 +100,5 @@
     <string name="success">Успешна регистрација</string>
     <string name="buttonClickCheck">Проверите прво исправност података кликом на упитник</string>
     <string name="messagesFirebase">messages</string>
+    <string name="exitGame">Излаз из игре?</string>
 </resources>

@@ -198,4 +198,28 @@ public class DialogBuilder {
         return builder1;
     }
 
+    public static androidx.appcompat.app.AlertDialog.Builder exitGame(final Activity activity)
+    {
+        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which){
+                    case DialogInterface.BUTTON_POSITIVE:
+                        int pid = android.os.Process.myPid();
+                        android.os.Process.killProcess(pid);
+                        System.exit(1);
+                        break;
+                    case DialogInterface.BUTTON_NEGATIVE:
+                        break;
+                }
+            }
+        };
+        androidx.appcompat.app.AlertDialog.Builder getSinglePlayerActivityBuilder = new androidx.appcompat.app.AlertDialog.Builder(activity);
+        getSinglePlayerActivityBuilder
+                .setTitle(activity.getResources().getString(R.string.exitGame))
+                .setMessage(activity.getResources().getString(R.string.exitFromSingleGame))
+                .setPositiveButton(activity.getResources().getString(R.string.yes),dialogClickListener)
+                .setNegativeButton(activity.getResources().getString(R.string.no), dialogClickListener);
+        return getSinglePlayerActivityBuilder;
+    }
 }

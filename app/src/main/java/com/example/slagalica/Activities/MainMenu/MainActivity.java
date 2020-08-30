@@ -158,4 +158,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed() {
+        DialogBuilder.exitGame(this).show();
+    }
 }
