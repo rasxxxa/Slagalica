@@ -11,11 +11,11 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.example.slagalica.Activities.MainMenu.MainActivity;
 import com.example.slagalica.Connection.ConnectionController;
 import com.example.slagalica.HelperClasses.ErrorInfo;
 import com.example.slagalica.MultiPlayer.Player;
 import com.example.slagalica.R;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -28,7 +28,53 @@ public class MultiPlayerActivity extends AppCompatActivity {
     private ValueEventListener listenerForChallenge;
     private ValueEventListener listenerForGame;
     private ValueEventListener listenerChallengeResponse;
-    private AlertDialog dialog;
+    private AlertDialog dialogAccept;
+    private DatabaseReference referenceGame;
+    private DatabaseReference referenceChallenger;
+    private DatabaseReference referenceChallenge;
+    private DatabaseReference referencePlayers;
+
+    public DatabaseReference getReferencePlayers() {
+        return referencePlayers;
+    }
+
+    public void setReferencePlayers(DatabaseReference referencePlayers) {
+        this.referencePlayers = referencePlayers;
+    }
+
+    public DatabaseReference getReferenceGame() {
+        return referenceGame;
+    }
+
+    public void setReferenceGame(DatabaseReference referenceGame) {
+        this.referenceGame = referenceGame;
+    }
+
+    public DatabaseReference getReferenceChallenger() {
+        return referenceChallenger;
+    }
+
+    public void setReferenceChallenger(DatabaseReference referenceChallenger) {
+        this.referenceChallenger = referenceChallenger;
+    }
+
+    public DatabaseReference getReferenceChallenge() {
+        return referenceChallenge;
+    }
+
+    public void setReferenceChallenge(DatabaseReference referenceChallenge) {
+        this.referenceChallenge = referenceChallenge;
+    }
+
+    public AlertDialog getDialogAwait() {
+        return dialogAwait;
+    }
+
+    public void setDialogAwait(AlertDialog dialogAwait) {
+        this.dialogAwait = dialogAwait;
+    }
+
+    private AlertDialog dialogAwait;
     private ListView mainListView;
     private SearchView searchView;
     private ConnectionController connectionController;
@@ -43,11 +89,11 @@ public class MultiPlayerActivity extends AppCompatActivity {
 
 
     public AlertDialog getDialog() {
-        return dialog;
+        return dialogAccept;
     }
 
     public void setDialog(AlertDialog dialog) {
-        this.dialog = dialog;
+        this.dialogAccept = dialog;
     }
 
     public ValueEventListener getListenerChallengeResponse() {
@@ -126,6 +172,16 @@ public class MultiPlayerActivity extends AppCompatActivity {
         super.onDestroy();
         // remove user from online list
         connectionController.removePlayerForOnline(this, MainActivity.player);
+        connectionController.removeResourcesMultiplayer(this);
+        if (dialogAccept != null)
+        {
+            dialogAccept.dismiss();
+        }
+        if (dialogAwait != null)
+        {
+            dialogAwait.dismiss();
+        }
+
     }
 
 

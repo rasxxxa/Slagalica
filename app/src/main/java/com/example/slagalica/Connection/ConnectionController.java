@@ -104,7 +104,9 @@ public class ConnectionController {
         try {
             final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
             final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
-            firebaseDatabase.getReference().child(context.getResources().getString(R.string.playersOnlineNode)).addValueEventListener(valueEventListener);
+            final DatabaseReference referencePlayers = firebaseDatabase.getReference().child(context.getResources().getString(R.string.playersOnlineNode));
+            ((MultiPlayerActivity)context).setReferencePlayers(referencePlayers);
+            referencePlayers.addValueEventListener(valueEventListener);
         } catch (Exception e) {
             Log.e(ErrorInfo.FirebaseAppInitialise.toString(), ErrorInfo.FirebaseAppInitialise.getValue());
             int pid = android.os.Process.myPid();
@@ -131,7 +133,6 @@ public class ConnectionController {
                     if (challenger != null) {
                         //MultiPlayerActivity.this.playerChallengerUsername = challenger.getUsername();
                         // setting dialog to multiplayer
-
                         ((MultiPlayerActivity) context).setDialog(DialogBuilder.challengeFromPlayer(challenger, context).create());
                         ((MultiPlayerActivity) context).getDialog().show();
                     }
@@ -156,7 +157,9 @@ public class ConnectionController {
         };
         final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
         final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
-        firebaseDatabase.getReference().child(context.getResources().getString(R.string.playersOnlineNode)).child(MainActivity.player.getUsername()).child(context.getResources().getString(R.string.challengerFirebase)).addValueEventListener(listenerForChallenge);
+        final DatabaseReference referenceChallenged = firebaseDatabase.getReference().child(context.getResources().getString(R.string.playersOnlineNode)).child(MainActivity.player.getUsername()).child(context.getResources().getString(R.string.challengerFirebase));
+        ((MultiPlayerActivity)context).setReferenceChallenge(referenceChallenged);
+        referenceChallenged.addValueEventListener(listenerForChallenge);
         return listenerForChallenge;
     }
 
@@ -178,7 +181,7 @@ public class ConnectionController {
                     SinglePlayerActivity.typeOfGame = TypeOfGame.MultiPlayer;
                     intent.putExtra(context.getResources().getString(R.string.typeofplayer), 2);
                     context.startActivity(intent);
-                    ((MultiPlayerActivity) context).finishAndRemoveTask();
+                    ((MultiPlayerActivity) context).finish();
                 }
             }
 
@@ -189,7 +192,9 @@ public class ConnectionController {
 
 
         };
-        firebaseDatabase.getReference().child(context.getResources().getString(R.string.gameFirebase)).child(player.getGameId()).addValueEventListener(listenerForGame);
+        final DatabaseReference gameReference = firebaseDatabase.getReference().child(context.getResources().getString(R.string.gameFirebase)).child(player.getGameId());
+        ((MultiPlayerActivity)context).setReferenceGame(gameReference);
+        gameReference.addValueEventListener(listenerForGame);
         return listenerForGame;
     }
 
@@ -279,15 +284,15 @@ public class ConnectionController {
                             .child(context.getResources().getString(R.string.challengerFirebase))
                             .removeValue();
                     MainActivity.player.setIdInGame("");
-                    firebaseDatabase.getReference().removeEventListener(this);
                     DatabaseReference ref = firebaseDatabase.getReference().child(context.getResources().getString(R.string.playersOnlineNode))
                             .child(username);
 
                     ref.child(context.getResources().getString(R.string.challengerFirebase))
                             .removeValue();
                     ref.child(context.getResources().getString(R.string.challengedFirebase)).removeValue();
-
+                    ((MultiPlayerActivity)context).getDialogAwait().dismiss();
                     firebaseDatabase.getReference().child(context.getResources().getString(R.string.playersOnlineNode)).child(MainActivity.player.getUsername()).child("challengedSomeone").setValue(false);
+                    DialogBuilder.dialogPlayerRefused(context).show();
                 }
             }
 
@@ -296,10 +301,12 @@ public class ConnectionController {
 
             }
         };
-        firebaseDatabase.getReference().child(context.getResources().getString(R.string.playersOnlineNode))
+
+        final DatabaseReference referenceChallenged = firebaseDatabase.getReference().child(context.getResources().getString(R.string.playersOnlineNode))
                 .child(username)
-                .child(context.getResources().getString(R.string.challengedFirebase))
-                .addValueEventListener(listenerForAnswer);
+                .child(context.getResources().getString(R.string.challengedFirebase));
+        ((MultiPlayerActivity)context).setReferenceChallenger(referenceChallenged);
+                referenceChallenged.addValueEventListener(listenerForAnswer);
         return listenerForAnswer;
     }
 
@@ -476,6 +483,30 @@ public class ConnectionController {
         final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
         final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
         firebaseDatabase.getReference().child(context.getResources().getString(R.string.playerNode)).child(shortPlayerInfo.getUsername()).setValue(shortPlayerInfo);
+    }
+
+    public void removeResourcesMultiplayer(Context context)
+    {
+        final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
+        final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
+        if (((MultiPlayerActivity)context).getReferenceChallenge()!=null)
+        {
+            ((MultiPlayerActivity)context).getReferenceChallenge().removeEventListener(((MultiPlayerActivity)context).getListenerForChallenge());
+        }
+        if (((MultiPlayerActivity)context).getReferenceChallenger()!=null)
+        {
+            ((MultiPlayerActivity)context).getReferenceChallenger().removeEventListener(((MultiPlayerActivity)context).getListenerChallengeResponse());
+        }
+        if (((MultiPlayerActivity)context).getReferenceGame()!=null)
+        {
+            ((MultiPlayerActivity)context).getReferenceGame().removeEventListener(((MultiPlayerActivity)context).getListenerForGame());
+        }
+        if (((MultiPlayerActivity)context).getReferencePlayers()!=null)
+        {
+            ((MultiPlayerActivity)context).getReferencePlayers().removeEventListener(((MultiPlayerActivity)context).getListenerForPlayersOnline());
+        }
+
+
 
     }
 }

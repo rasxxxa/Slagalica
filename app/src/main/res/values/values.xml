@@ -31,5 +31,5 @@
     <integer name="pointsMainSolutionGame6">7</integer>
     <integer name="typeOfPlayerHost">1</integer>
     <integer name="typeOfPlayerGuest">2</integer>
-    <integer name="idleTimeInMultiplayer">99999600</integer>
+    <integer name="idleTimeInMultiplayer">600</integer>
 </resources>

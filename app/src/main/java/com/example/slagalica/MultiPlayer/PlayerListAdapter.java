@@ -29,10 +29,8 @@ import java.util.Objects;
 public class PlayerListAdapter extends ArrayAdapter<Player> {
     private Context mContext;
     private int resourceId;
-    private FirebaseApp firebaseApp;
     private List<Player> finalPlayers;
     private List<Player> allPlayers;
-    private FirebaseDatabase firebaseDatabase;
     private Filter filter;
 
     public PlayerListAdapter(@NonNull Context context, int resource, @NonNull List<Player> objects) {
@@ -114,7 +112,8 @@ public class PlayerListAdapter extends ArrayAdapter<Player> {
                     MainActivity.player.setIdInGame(username);
                 }
             ConnectionController.getInstance().challengeSomeone(mContext,username, MainActivity.player);
-            DialogBuilder.createWaitingAlert(username,mContext).show();
+                ((MultiPlayerActivity)mContext).setDialogAwait(DialogBuilder.createWaitingAlert(username,mContext).create());
+                ((MultiPlayerActivity)mContext).getDialogAwait().show();
                 ((MultiPlayerActivity)mContext).setListenerChallengeResponse(ConnectionController.getInstance().waitingForAnswerListener(mContext,username));
             }
         });

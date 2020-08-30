@@ -108,8 +108,8 @@ public class DialogBuilder {
         return getActivityBuilder;
     }
 
-    public static android.app.AlertDialog.Builder createWaitingAlert(final String username, final Context mContext) {
-        android.app.AlertDialog.Builder builder1 = new android.app.AlertDialog.Builder(mContext);
+    public static androidx.appcompat.app.AlertDialog.Builder createWaitingAlert(final String username, final Context mContext) {
+        androidx.appcompat.app.AlertDialog.Builder builder1 = new androidx.appcompat.app.AlertDialog.Builder(mContext);
         builder1.setTitle(mContext.getResources().getString(R.string.waitingForPlayer) + " " + username);
         builder1.setCancelable(false);
         LinearLayout layout = new LinearLayout(mContext);
@@ -144,7 +144,7 @@ public class DialogBuilder {
                         Intent intent = new Intent(context,MainActivity.class);
                         context.startActivity(intent);
                         SinglePlayerActivity.game = null;
-                        ((SinglePlayerActivity)context).finishAndRemoveTask();
+                        ((SinglePlayerActivity)context).finish();
                         break;
                     case DialogInterface.BUTTON_NEGATIVE:
                         break;
@@ -191,6 +191,20 @@ public class DialogBuilder {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         context.finish();
+                        dialog.cancel();
+                    }
+                });
+
+        return builder1;
+    }
+
+    public static android.app.AlertDialog.Builder dialogPlayerRefused(final Context context) {
+        android.app.AlertDialog.Builder builder1 = new android.app.AlertDialog.Builder(context);
+        builder1.setTitle("Игра је отказана");
+        builder1.setMessage("Корисник је одбио изазов.");
+        builder1.setNeutralButton(android.R.string.ok,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
                     }
                 });
