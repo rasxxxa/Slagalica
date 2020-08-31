@@ -12,9 +12,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.slagalica.Exceptions.ExceptionHandler;
 import com.example.slagalica.Game.Game;
 import com.example.slagalica.HelperClasses.DialogBuilder;
-import com.example.slagalica.HelperClasses.ErrorInfo;
+import com.example.slagalica.Exceptions.ErrorInfo;
 import com.example.slagalica.HelperClasses.ResourceHelper;
 import com.example.slagalica.HelperClasses.TypeOfGame;
 import com.example.slagalica.Activities.MainMenu.MainActivity;
@@ -45,29 +46,18 @@ public class ConnectionController {
     private ValueEventListener listenerForPlayersOnline;
     private ValueEventListener listenerForChallenge;
 
-    public ValueEventListener getListenerForChallenge() {
-        return listenerForChallenge;
-    }
-
-    public void setListenerForChallenge(ValueEventListener listenerForChallenge) {
-        this.listenerForChallenge = listenerForChallenge;
-    }
-
-    public ValueEventListener getListenerForGame() {
-        return listenerForGame;
-    }
-
-    public void setListenerForGame(ValueEventListener listenerForGame) {
-        this.listenerForGame = listenerForGame;
-    }
-
     private ValueEventListener listenerForGame;
     private ValueEventListener listenerChallengeResponse;
+
+    private ChildEventListener pointListener;
+    private ChildEventListener chatListener;
 
     private DatabaseReference referenceGame;
     private DatabaseReference referenceChallenger;
     private DatabaseReference referenceChallenge;
     private DatabaseReference referencePlayers;
+    private DatabaseReference referencePoints;
+    private DatabaseReference referenceChat;
 
     private ConnectionController() {
 
@@ -80,27 +70,32 @@ public class ConnectionController {
         return instance;
     }
 
+    public void setListenerForGame(ValueEventListener listenerForGame) {
+        this.listenerForGame = listenerForGame;
+    }
+
     public PlayerListAdapter getAdapter() {
         return adapter;
     }
 
-    public void setAdapter(PlayerListAdapter adapter) {
-        this.adapter = adapter;
-    }
-
     public boolean addOnlinePlayer(Context context, String username, Player player) {
 
-        final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
-        if (firebaseApp == null)
+        try
         {
-            killMultiplayerGame(context, ErrorInfo.AddPlayerToOnlineList, true);
+            final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
+            if (firebaseApp == null)
+            {
+                throw new ExceptionHandler(ErrorInfo.AddPlayerToOnlineList);
+            }
+            final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
+            firebaseDatabase.getReference().child(context.getResources().getString(R.string.playersOnlineNode)).child(username).setValue(player);
+            return true;
+
+        }catch (ExceptionHandler exception)
+        {
+            killMultiplayerGame(context, exception.getErrorInfo(), true);
             return false;
         }
-        final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
-        firebaseDatabase.getReference().child(context.getResources().getString(R.string.playersOnlineNode)).child(username).setValue(player);
-        return true;
-
-
     }
 
     public void getOnlinePlayersListener(final ArrayList<Player> players, final Context context, final ListView mainListView) {
@@ -111,7 +106,12 @@ public class ConnectionController {
                     players.clear();
                     for (DataSnapshot dsnapshot : snapshot.getChildren()) {
                         final Player player = dsnapshot.getValue(Player.class);
-                        if (!player.getUsername().equals(MainActivity.player.getUsername()) && player.getChallenger() == null && player.challenged == null && player.challengedSomeone == false && checkUserOnlineStatus(context, player.getTimeOnline())) {
+                        if (player.getUsername() == null)
+                        {
+                            // not need to handle, just skip user, maybe glitch in database
+                            continue;
+                        }
+                        if (!player.getUsername().equals(MainActivity.player.getUsername()) && player.getChallenger() == null && player.challenged == null && !player.challengedSomeone && checkUserOnlineStatus(context, player.getTimeOnline())) {
                             players.add(dsnapshot.getValue(Player.class));
                         }
 
@@ -120,7 +120,6 @@ public class ConnectionController {
                     mainListView.setAdapter(adapter);
                 } catch (Exception e) {
                     killMultiplayerGame(context, ErrorInfo.PlayerListUpdate, true);
-                    return;
                 }
             }
 
@@ -133,15 +132,14 @@ public class ConnectionController {
         try {
             final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
             if (firebaseApp == null) {
-                killMultiplayerGame(context, ErrorInfo.FirebaseAppInitialise, true);
-                return;
+                throw new ExceptionHandler(ErrorInfo.FirebaseAppInitialise);
             }
             final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
             final DatabaseReference referencePlayers = firebaseDatabase.getReference().child(context.getResources().getString(R.string.playersOnlineNode));
             this.referencePlayers = referencePlayers;
             referencePlayers.addValueEventListener(valueEventListener);
-        } catch (Exception e) {
-            killMultiplayerGame(context, ErrorInfo.FirebaseAppInitialise, true);
+        } catch (ExceptionHandler e) {
+            killMultiplayerGame(context, e.getErrorInfo(), true);
             return;
         }
         listenerForPlayersOnline = valueEventListener;
@@ -152,7 +150,6 @@ public class ConnectionController {
         // If user was idle in multiplayer more than x minutes, other online players wont see him
         long currentTimeSeconds = System.currentTimeMillis() / 1000;
         return (currentTimeSeconds - playerOnlineTime < context.getResources().getInteger(R.integer.idleTimeInMultiplayer));
-
     }
 
     public void getChallengePlayer(final Context context) {
@@ -184,28 +181,42 @@ public class ConnectionController {
             }
         };
         final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
-        if (firebaseApp == null) {
+        try
+        {
+            if (firebaseApp == null) {
+                throw new ExceptionHandler(ErrorInfo.ChallengePlayerDialog);
+            }
+            final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
+            final DatabaseReference referenceChallenged = firebaseDatabase.getReference().child(context.getResources().getString(R.string.playersOnlineNode)).child(MainActivity.player.getUsername()).child(context.getResources().getString(R.string.challengerFirebase));
+            referenceChallenge = referenceChallenged;
+            referenceChallenged.addValueEventListener(listenerForChallenge);
+            this.listenerForChallenge = listenerForChallenge;
+        }catch (ExceptionHandler exceptionHandler)
+        {
             killMultiplayerGame(context, ErrorInfo.ChallengePlayerDialog, true);
-            return;
         }
-        final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
-        final DatabaseReference referenceChallenged = firebaseDatabase.getReference().child(context.getResources().getString(R.string.playersOnlineNode)).child(MainActivity.player.getUsername()).child(context.getResources().getString(R.string.challengerFirebase));
-        referenceChallenge = referenceChallenged;
-        referenceChallenged.addValueEventListener(listenerForChallenge);
-        this.listenerForChallenge = listenerForChallenge;
+
     }
 
     public ValueEventListener createGameListener(final Context context, final Player player) {
         final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
-        if (firebaseApp == null) {
-            killMultiplayerGame(context, ErrorInfo.CreatingGameListener, true);
+        try
+        {
+            if (firebaseApp == null) {
+                throw new ExceptionHandler(ErrorInfo.CreatingGameListener);
+            }
+        }catch (ExceptionHandler exceptionHandler)
+        {
+            killMultiplayerGame(context, exceptionHandler.getErrorInfo(), true);
             return null;
         }
+
         final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
         ValueEventListener listenerForGame = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (SinglePlayerActivity.game != null) {
+                    // This check is used as semaphore, just in case ...
                     return;
                 }
                 Game game = snapshot.getValue(Game.class);
@@ -237,8 +248,14 @@ public class ConnectionController {
 
     public void acceptChallengeFrom(Context context) {
         final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
-        if (firebaseApp == null) {
-            killMultiplayerGame(context, ErrorInfo.AcceptingChallengeError, true);
+        try
+        {
+            if (firebaseApp == null) {
+                throw new ExceptionHandler(ErrorInfo.AcceptingChallengeError);
+            }
+        }catch (ExceptionHandler exceptionHandler)
+        {
+            killMultiplayerGame(context, exceptionHandler.getErrorInfo(), true);
             return;
         }
         final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
@@ -265,7 +282,13 @@ public class ConnectionController {
 
     public void removePlayerForOnline(Context context, Player player) {
         final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
-        if (firebaseApp == null) {
+        try
+        {
+            if (firebaseApp == null) {
+                throw new ExceptionHandler(ErrorInfo.RemovingPlayerFromOnlineList);
+            }
+        }catch (ExceptionHandler exceptionHandler)
+        {
             killMultiplayerGame(context, ErrorInfo.RemovingPlayerFromOnlineList, true);
             return;
         }
@@ -275,10 +298,17 @@ public class ConnectionController {
 
     public void refuseChallenge(final Context context, final Player player, String username) {
         final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
-        if (firebaseApp == null) {
-            killMultiplayerGame(context, ErrorInfo.RefuseChallengeFromPlayer, true);
+        try
+        {
+            if (firebaseApp == null) {
+                throw new ExceptionHandler(ErrorInfo.RefuseChallengeFromPlayer);
+            }
+        }catch (ExceptionHandler exceptionHandler)
+        {
+            killMultiplayerGame(context, exceptionHandler.getErrorInfo(), true);
             return;
         }
+
         final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
         DatabaseReference ref = firebaseDatabase
                 .getReference()
@@ -295,12 +325,17 @@ public class ConnectionController {
 
     public void challengeSomeone(Context context, String username, Player playerChallenger) {
         final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
-        if (firebaseApp == null) {
-            killMultiplayerGame(context, ErrorInfo.ErrorChallengePlayer, true);
+        try {
+            if (firebaseApp == null) {
+                throw new ExceptionHandler(ErrorInfo.ErrorChallengePlayer);
+            }
+        }catch (ExceptionHandler exceptionHandler)
+        {
+            killMultiplayerGame(context, exceptionHandler.getErrorInfo(), true);
             return;
         }
+
         final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
-        assert firebaseApp != null;
         DatabaseReference ref = firebaseDatabase
                 .getReference()
                 .child(context.getResources().getString(R.string.playersOnlineNode));
@@ -313,22 +348,25 @@ public class ConnectionController {
         playerChallenger.setChallengedSomeone(true);
     }
 
-    public ValueEventListener getListenerChallengeResponse() {
-        return listenerChallengeResponse;
-    }
-
     public void setListenerChallengeResponse(ValueEventListener listenerChallengeResponse) {
         this.listenerChallengeResponse = listenerChallengeResponse;
     }
 
     public ValueEventListener waitingForAnswerListener(final Context context, final String username) {
         final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
-        if (firebaseApp == null) {
-            killMultiplayerGame(context, ErrorInfo.WaitingForPlayer, true);
+        try
+        {
+            if (firebaseApp == null) {
+             throw new ExceptionHandler(ErrorInfo.WaitingForPlayer);
+            }
+        }catch (ExceptionHandler exceptionHandler)
+        {
+            killMultiplayerGame(context, exceptionHandler.getErrorInfo(), true);
             return null;
         }
+
         final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
-        ValueEventListener listenerForAnswer = new ValueEventListener() {
+        final ValueEventListener listenerForAnswer = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Boolean value = snapshot.getValue(Boolean.class);
@@ -360,6 +398,7 @@ public class ConnectionController {
                     ((MultiPlayerActivity) context).getDialogAwait().dismiss();
                     firebaseDatabase.getReference().child(context.getResources().getString(R.string.playersOnlineNode)).child(MainActivity.player.getUsername()).child("challengedSomeone").setValue(false);
                     DialogBuilder.dialogPlayerRefused(context).show();
+                    referenceChallenger.removeEventListener(this);
                 }
             }
 
@@ -400,9 +439,13 @@ public class ConnectionController {
         };
 
         final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
-        // TODO futrher implementation
-        if (firebaseApp == null) {
-            killMultiplayerGame(context, ErrorInfo.CheckingUsersInDatabase, null);
+        try {
+            if (firebaseApp == null) {
+             throw new ExceptionHandler(ErrorInfo.CheckingUsersInDatabase);
+            }
+        }catch (ExceptionHandler exceptionHandler)
+        {
+            killMultiplayerGame(context, exceptionHandler.getErrorInfo(), null);
             return null;
         }
         final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
@@ -410,12 +453,19 @@ public class ConnectionController {
         return eventListenerForUser;
     }
 
-    public ChildEventListener pointsUpdatedListener(final Context context, final Integer opponent, final Game game) {
+    public void pointsUpdatedListener(final Context context, final Integer opponent, final Game game) {
         final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
-        // TODO further implementation needed
-        if (firebaseApp == null) {
-            killMultiplayerGame(context, ErrorInfo.AddingUpdatePointsListener, false);
+        try
+        {
+            if (firebaseApp == null) {
+                throw new ExceptionHandler(ErrorInfo.AddingUpdatePointsListener);
+            }
+        }catch (ExceptionHandler handler)
+        {
+            killMultiplayerGame(context, handler.getErrorInfo(), false);
+            return;
         }
+
         final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
         ChildEventListener listenerForPoints = new ChildEventListener() {
             @Override
@@ -426,7 +476,19 @@ public class ConnectionController {
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 final FirebaseApp firebaseApp1 = FirebaseApp.initializeApp(context);
+                try
+                {
+                    if (firebaseApp1 == null)
+                    {
+                        throw new ExceptionHandler(ErrorInfo.AddingChild);
+                    }
+                }catch (ExceptionHandler exceptionHandler)
+                {
+                    killMultiplayerGame(context, exceptionHandler.getErrorInfo(), true);
+                    return;
+                }
                 final FirebaseDatabase firebaseDatabase1 = FirebaseDatabase.getInstance(firebaseApp1);
+
                 firebaseDatabase1.getReference().child(context.getResources().getString(R.string.gameFirebase)).child(game.getGameId()).child(context.getResources().getString(R.string.pointsFirebase) + opponent)
                         .addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
@@ -440,7 +502,7 @@ public class ConnectionController {
                                         return;
                                     }
 
-                                    int pointsOpponent[] = ((SinglePlayerActivity) context).getPointsOpponent();
+                                    int[] pointsOpponent = ((SinglePlayerActivity) context).getPointsOpponent();
 
                                     for (int i = 0; i < pointsOpponentArray.size(); i++) {
                                         pointsOpponent[i] = pointsOpponentArray.get(i);
@@ -478,29 +540,42 @@ public class ConnectionController {
 
             }
         };
-        firebaseDatabase.getReference().child(context.getResources().getString(R.string.gameFirebase)).child(game.getGameId()).child(context.getResources().getString(R.string.pointsFirebase) + opponent).addChildEventListener(listenerForPoints);
-        return listenerForPoints;
+        final DatabaseReference referencePoints = firebaseDatabase.getReference().child(context.getResources().getString(R.string.gameFirebase)).child(game.getGameId()).child(context.getResources().getString(R.string.pointsFirebase) + opponent);
+        referencePoints.addChildEventListener(listenerForPoints);
+        this.referencePoints = referencePoints;
+        this.pointListener = listenerForPoints;
     }
 
     public void updatePoints(final Context context, final String pointsNode, int points, String gameId) {
         final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
-        if (firebaseApp == null) {
-            // TODO to implement further
-            killMultiplayerGame(context, ErrorInfo.UpdatePoints, false);
+        try
+        {
+            if (firebaseApp == null) {
+                throw new ExceptionHandler(ErrorInfo.UpdatePoints);
+            }
+        }catch (ExceptionHandler exceptionHandler)
+        {
+            killMultiplayerGame(context, exceptionHandler.getErrorInfo(), false);
         }
+
         final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
         firebaseDatabase.getReference().child(context.getResources().getString(R.string.gameFirebase)).child(SinglePlayerActivity.game.getGameId()).child(pointsNode).child((gameId)).setValue(points);
     }
 
-    public ChildEventListener chatListener(final Context context, final ListView mainListView) {
+    public void chatListener(final Context context, final ListView mainListView) {
         final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
-        if (firebaseApp == null) {
-            // TODO implement for multiplayer flow
-            killMultiplayerGame(context, ErrorInfo.AddingChatListenerError, true);
-            return null;
+        try
+        {
+            if (firebaseApp == null) {
+                throw new ExceptionHandler(ErrorInfo.AddingChatListenerError);
+            }
+        }catch (ExceptionHandler exceptionHandler)
+        {
+            killMultiplayerGame(context, exceptionHandler.getErrorInfo(), true);
+            return;
         }
-        final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
 
+        final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
         ChildEventListener chatEventListener = new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
@@ -552,25 +627,39 @@ public class ConnectionController {
             }
         };
 
-        firebaseDatabase.getReference().child(context.getResources().getString(R.string.gameFirebase)).child(SinglePlayerActivity.game.getGameId()).child(context.getResources().getString(R.string.messagesFirebase)).addChildEventListener(chatEventListener);
-        return chatEventListener;
+        final DatabaseReference referenceChat = firebaseDatabase.getReference().child(context.getResources().getString(R.string.gameFirebase)).child(SinglePlayerActivity.game.getGameId()).child(context.getResources().getString(R.string.messagesFirebase));
+        referenceChat.addChildEventListener(chatEventListener);
+        this.chatListener = chatEventListener;
     }
 
     public void sendMessange(final Context context, ArrayList<Message> messages) {
         final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
-        final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
-        if (firebaseApp == null) {
-            killMultiplayerGame(context, ErrorInfo.SendingMessage, true);
+        try
+        {
+            if (firebaseApp == null) {
+               throw new ExceptionHandler(ErrorInfo.SendingMessage);
+            }
+        }catch (ExceptionHandler handler)
+        {
+            killMultiplayerGame(context, handler.getErrorInfo(), true);
+            return;
         }
+        final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
         firebaseDatabase.getReference().child(context.getResources().getString(R.string.gameFirebase)).child(SinglePlayerActivity.game.getGameId()).child(context.getResources().getString(R.string.messagesFirebase)).setValue(messages);
     }
 
     public void registerUser(final Context context, final ShortPlayerInfo shortPlayerInfo) {
         final FirebaseApp firebaseApp = FirebaseApp.initializeApp(context);
-        if (firebaseApp == null) {
-            killMultiplayerGame(context, ErrorInfo.RegisterUserMultiplayer, true);
+        try {
+            if (firebaseApp == null) {
+                throw new ExceptionHandler(ErrorInfo.RegisterUserMultiplayer);
+            }
+        }catch (ExceptionHandler handler)
+        {
+            killMultiplayerGame(context, handler.getErrorInfo(), true);
             return;
         }
+
         final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
         firebaseDatabase.getReference().child(context.getResources().getString(R.string.playerNode)).child(shortPlayerInfo.getUsername()).setValue(shortPlayerInfo);
     }
@@ -611,17 +700,42 @@ public class ConnectionController {
         }
     }
 
+    public void removeResourcesMultiplayerGame()
+    {
+        if (referencePoints != null)
+        {
+            if (pointListener != null)
+            {
+                referencePoints.removeEventListener(pointListener);
+                pointListener = null;
+                referencePoints = null;
+            }
+        }
+        removeResourcesForChat();
+    }
+    public void removeResourcesForChat()
+    {
+        if (referenceChat != null)
+        {
+            if (chatListener != null)
+            {
+                referenceChat.removeEventListener(chatListener);
+                referenceChat = null;
+                chatListener = null;
+            }
+        }
+    }
     public void killMultiplayerGame(Context context, ErrorInfo info, Boolean errorFromMultiplayerActivity) {
         Toast.makeText(context, context.getResources().getString(R.string.connectionProblem), Toast.LENGTH_SHORT).show();
         if (errorFromMultiplayerActivity == null) {
             // DO nothing
 
         } else if (!errorFromMultiplayerActivity) {
-            // Multiplayer game
+            removeResourcesMultiplayerGame();
         } else {
-            Log.e(info.toString(), info.getValue());
             removeResourcesMultiplayer();
         }
+        Log.e(info.toString(), info.getValue());
         Intent intent = new Intent(context, MainActivity.class);
         context.startActivity(intent);
         ((Activity) context).finish();

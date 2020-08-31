@@ -12,11 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.slagalica.Connection.ConnectionController;
-import com.example.slagalica.HelperClasses.ErrorInfo;
+import com.example.slagalica.Exceptions.ErrorInfo;
 import com.example.slagalica.MultiPlayer.Player;
 import com.example.slagalica.R;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 

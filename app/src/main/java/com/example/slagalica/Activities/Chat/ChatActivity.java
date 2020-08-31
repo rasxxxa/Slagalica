@@ -16,7 +16,6 @@ import com.example.slagalica.Connection.ConnectionController;
 import com.example.slagalica.MultiPlayer.Message;
 import com.example.slagalica.MultiPlayer.Player;
 import com.example.slagalica.R;
-import com.google.firebase.database.ChildEventListener;
 
 import java.util.ArrayList;
 
@@ -25,7 +24,6 @@ public class ChatActivity extends AppCompatActivity {
 
     private ConstraintLayout constraintLayout;
     private EditText editTextMessage;
-    private ChildEventListener listener;
     private ListView mainListView;
     private ConnectionController connectionController;
 
@@ -45,12 +43,13 @@ public class ChatActivity extends AppCompatActivity {
         constraintLayout = findViewById(R.id.layoutChatActivity);
         constraintLayout.setBackgroundColor(Color.parseColor(color));
         editTextMessage = findViewById(R.id.editTextMessage);
-        listener = connectionController.chatListener(this,mainListView);
+        connectionController.chatListener(this,mainListView);
     }
 
     public void sendMessage(View view)
     {
         String message = editTextMessage.getText().toString();
+        editTextMessage.setText("");
         if (message.length() < 1)
         {
             return;
@@ -65,5 +64,11 @@ public class ChatActivity extends AppCompatActivity {
         messages.add(messageForDatabase);
         SinglePlayerActivity.game.setMessages(messages);
         connectionController.sendMessange(this, SinglePlayerActivity.game.getMessages());
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        connectionController.removeResourcesForChat();
     }
 }

@@ -1,4 +1,4 @@
-package com.example.slagalica.HelperClasses;
+package com.example.slagalica.Exceptions;
 
 public enum ErrorInfo {
 
@@ -21,6 +21,7 @@ public enum ErrorInfo {
     RejectingChallengeFromPlayer("When player reject challenge error"),
     AcceptingChallengeError("Error when player accepted challenge"),
     ErrorChallengePlayer("Challenge another player error"),
+    AddingChild("Try to add child in points update error"),
     ChallengePlayerDialog("Challenge player creation dialog error"),
     PlayerListUpdate("Update player list error"),
     CreatingGameListener("Creating listener for game error");

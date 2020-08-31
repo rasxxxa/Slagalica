@@ -54,7 +54,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
     }
 
     private ArrayList<TextView> textViewsOpponentPoints;
-    private ChildEventListener pointListener;
+
     private TextView mainPlayerSumOfPoints;
 
     // Opponent points se skrivaju ako je single player
@@ -87,7 +87,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
             connectionController = ConnectionController.getInstance();
             MainActivity.typeOfPlayer = getIntent().getIntExtra(getResources().getString(R.string.typeofplayer), 1);
             final int opponent = MainActivity.typeOfPlayer == 1 ? 2 : 1;
-            pointListener = connectionController.pointsUpdatedListener(this,opponent,game);
+            connectionController.pointsUpdatedListener(this,opponent,game);
         }
 
         constraintLayout = findViewById(R.id.layoutSinglePlayer);
