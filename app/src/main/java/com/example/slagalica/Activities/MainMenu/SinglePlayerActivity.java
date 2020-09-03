@@ -24,7 +24,6 @@ import com.example.slagalica.HelperClasses.DialogBuilder;
 import com.example.slagalica.HelperClasses.ResourceHelper;
 import com.example.slagalica.HelperClasses.TypeOfGame;
 import com.example.slagalica.R;
-import com.google.firebase.database.ChildEventListener;
 
 import java.util.ArrayList;
 
@@ -37,8 +36,6 @@ public class SinglePlayerActivity extends AppCompatActivity {
     private boolean[] playedGames;
     public int[] pointsMainPlayer;
     public int[] pointsOpponent;
-    private final int numberOfGames = 6;
-    public static final String sharedPreferences = "History";
     public static Game game;
 
     // Cuvamo referencu jer listenera oce da pokupi garbage colector
@@ -60,13 +57,6 @@ public class SinglePlayerActivity extends AppCompatActivity {
     // Opponent points se skrivaju ako je single player
     private TextView opponentSumOfPoints;
 
-    // Header se skriva ukoliko je singlePlayer;
-    private TextView opponentLabel;
-
-    private ConstraintLayout constraintLayout;
-
-    private ConnectionController connectionController;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,13 +74,13 @@ public class SinglePlayerActivity extends AppCompatActivity {
         if (typeOfGame == TypeOfGame.SinglePlayer) {
             game = ResourceHelper.getInstance(this).createSinglePlayerGame();
         } else {
-            connectionController = ConnectionController.getInstance();
+            ConnectionController connectionController = ConnectionController.getInstance();
             MainActivity.typeOfPlayer = getIntent().getIntExtra(getResources().getString(R.string.typeofplayer), 1);
             final int opponent = MainActivity.typeOfPlayer == 1 ? 2 : 1;
-            connectionController.pointsUpdatedListener(this,opponent,game);
+            connectionController.pointsUpdatedListener(this, opponent, game);
         }
 
-        constraintLayout = findViewById(R.id.layoutSinglePlayer);
+        ConstraintLayout constraintLayout = findViewById(R.id.layoutSinglePlayer);
         SharedPreferences preferences = getSharedPreferences(MainActivity.settingsPreferencesKey, MODE_PRIVATE);
         String color = preferences.getString(getResources().getString(R.string.backgroundColorKey), getResources().getString(R.string.color1));
         constraintLayout.setBackgroundColor(Color.parseColor(color));
@@ -151,6 +141,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
             }
         };
         getSharedPreferences(MainActivity.historyPointsPreferencesKey[typeOfGame.getValue()], MODE_PRIVATE).registerOnSharedPreferenceChangeListener(listener);
+        int numberOfGames = 6;
         for (int i = 1; i <= numberOfGames; i++) {
             int idMain = getResources().getIdentifier(getResources().getString(R.string.gamePrefix) + i + getResources().getString(R.string.mainPlyerPoints), "id", getPackageName());
             int idOpponent = getResources().getIdentifier(getResources().getString(R.string.gamePrefix) + i + getResources().getString(R.string.opponentPoints), "id", getPackageName());
@@ -176,7 +167,8 @@ public class SinglePlayerActivity extends AppCompatActivity {
         mainPlayerSumOfPoints = findViewById(R.id.SumPointsMainPlayer);
         opponentSumOfPoints = findViewById(R.id.SumPointsOpponent);
 
-        opponentLabel = findViewById(R.id.textViewOpponent);
+        // Header se skriva ukoliko je singlePlayer;
+        TextView opponentLabel = findViewById(R.id.textViewOpponent);
 
         if (TypeOfGame.SinglePlayer == typeOfGame) {
             for (int i = 0; i < numberOfGames; i++) {

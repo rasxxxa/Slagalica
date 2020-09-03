@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/games"
-                android:textStyle="italic"></TextView>
+                android:textStyle="italic"/>
 
             <TextView
                 android:id="@+id/textViewMainPlayer"
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/mainPlayer"
-                android:textStyle="italic"></TextView>
+                android:textStyle="italic"/>
 
             <TextView
                 android:id="@+id/textViewOpponent"
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/Opponent"
-                android:textStyle="italic"></TextView>
+                android:textStyle="italic"/>
 
         </LinearLayout>
 
@@ -70,8 +70,8 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0"
-                android:textStyle="italic"></TextView>
+                android:text="@string/zero"
+                android:textStyle="italic"/>
 
             <TextView
                 style="@style/SmallHeader"
@@ -79,8 +79,8 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0"
-                android:textStyle="italic"></TextView>
+                android:text="@string/zero"
+                android:textStyle="italic"/>
         </LinearLayout>
 
         <LinearLayout
@@ -102,8 +102,8 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0"
-                android:textStyle="italic"></TextView>
+                android:text="@string/zero"
+                android:textStyle="italic"/>
 
             <TextView
                 style="@style/SmallHeader"
@@ -111,8 +111,8 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0"
-                android:textStyle="italic"></TextView>
+                android:text="@string/zero"
+                android:textStyle="italic"/>
         </LinearLayout>
 
         <LinearLayout
@@ -134,8 +134,8 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0"
-                android:textStyle="italic"></TextView>
+                android:text="@string/zero"
+                android:textStyle="italic"/>
 
             <TextView
                 style="@style/SmallHeader"
@@ -143,8 +143,8 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0"
-                android:textStyle="italic"></TextView>
+                android:text="@string/zero"
+                android:textStyle="italic"/>
         </LinearLayout>
 
         <LinearLayout
@@ -166,8 +166,8 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0"
-                android:textStyle="italic"></TextView>
+                android:text="@string/zero"
+                android:textStyle="italic"/>
 
             <TextView
                 style="@style/SmallHeader"
@@ -175,8 +175,8 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0"
-                android:textStyle="italic"></TextView>
+                android:text="@string/zero"
+                android:textStyle="italic"/>
         </LinearLayout>
 
         <LinearLayout
@@ -198,8 +198,8 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0"
-                android:textStyle="italic"></TextView>
+                android:text="@string/zero"
+                android:textStyle="italic"/>
 
             <TextView
                 style="@style/SmallHeader"
@@ -207,8 +207,8 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0"
-                android:textStyle="italic"></TextView>
+                android:text="@string/zero"
+                android:textStyle="italic"/>
         </LinearLayout>
 
         <LinearLayout
@@ -230,8 +230,8 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0"
-                android:textStyle="italic"></TextView>
+                android:text="@string/zero"
+                android:textStyle="italic"/>
 
             <TextView
                 style="@style/SmallHeader"
@@ -239,8 +239,8 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0"
-                android:textStyle="italic"></TextView>
+                android:text="@string/zero"
+                android:textStyle="italic"/>
         </LinearLayout>
 
         <LinearLayout
@@ -254,7 +254,7 @@
                 style="@style/ButtonStyleMainMenu"
                 android:layout_width="50dp"
                 android:layout_weight="1"
-                android:text="Ћаскање" />
+                android:text="@string/chat" />
 
             <TextView
                 style="@style/SmallHeader"
@@ -262,14 +262,14 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textStyle="italic"></TextView>
+                android:textStyle="italic"/>
 
             <TextView
                 style="@style/SmallHeader"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textStyle="italic"></TextView>
+                android:textStyle="italic"/>
         </LinearLayout>
 
         <LinearLayout
@@ -284,7 +284,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/sumPoints"
-                android:textStyle="italic"></TextView>
+                android:textStyle="italic"/>
 
             <TextView
                 style="@style/SmallHeader"
@@ -292,8 +292,8 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0"
-                android:textStyle="italic"></TextView>
+                android:text="@string/zero"
+                android:textStyle="italic"/>
 
             <TextView
                 style="@style/SmallHeader"
@@ -301,8 +301,8 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0"
-                android:textStyle="italic"></TextView>
+                android:text="@string/zero"
+                android:textStyle="italic"/>
         </LinearLayout>
 
     </LinearLayout>

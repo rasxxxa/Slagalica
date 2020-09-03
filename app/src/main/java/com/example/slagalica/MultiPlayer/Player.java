@@ -17,11 +17,46 @@ public class Player {
         return timeOnline;
     }
 
-    public void setTimeOnline(long timeOnline) {
-        this.timeOnline = timeOnline;
+    public String name;
+
+    public void setChallengedSomeone(boolean challengedSomeone) {
+        this.challengedSomeone = challengedSomeone;
     }
 
-    public String name;
+    public String lastname;
+    public String idInGame;
+    public Player challenger;
+
+    public Player(String username, String gameId, ArrayList<Boolean> gamesPlayed, ArrayList<Integer> gamePoints, Boolean challenged, boolean challengedSomeone, int typeOfPlayer, long timeOnline, String name, String lastname, String idInGame, Player challenger) {
+        this.username = username;
+        this.gameId = gameId;
+        this.gamesPlayed = gamesPlayed;
+        this.gamePoints = gamePoints;
+        this.challenged = challenged;
+        this.challengedSomeone = challengedSomeone;
+        this.typeOfPlayer = typeOfPlayer;
+        this.timeOnline = timeOnline;
+        this.name = name;
+        this.lastname = lastname;
+        this.idInGame = idInGame;
+        this.challenger = challenger;
+    }
+
+    public ArrayList<Boolean> getGamesPlayed() {
+        return gamesPlayed;
+    }
+
+    public void setGamesPlayed(ArrayList<Boolean> gamesPlayed) {
+        this.gamesPlayed = gamesPlayed;
+    }
+
+    public ArrayList<Integer> getGamePoints() {
+        return gamePoints;
+    }
+
+    public void setGamePoints(ArrayList<Integer> gamePoints) {
+        this.gamePoints = gamePoints;
+    }
 
     public Boolean getChallenged() {
         return challenged;
@@ -35,21 +70,20 @@ public class Player {
         return challengedSomeone;
     }
 
-    public void setChallengedSomeone(boolean challengedSomeone) {
-        this.challengedSomeone = challengedSomeone;
+    public void setTimeOnline(long timeOnline) {
+        this.timeOnline = timeOnline;
     }
 
-    public String lastname;
-    public String idInGame;
-    public Player challenger = null;
-
-
-    public Player getChallenger() {
-        return challenger;
+    public String getIdInGame() {
+        return idInGame;
     }
 
     public void setChallenger(Player challenger) {
         this.challenger = challenger;
+    }
+
+    public Player getChallenger() {
+        return challenger;
     }
 
     public Player() {
@@ -71,18 +105,6 @@ public class Player {
         challengedSomeone = false;
     }
 
-    public Player(String username, String gameId, ArrayList<Boolean> gamesPlayed, ArrayList<Integer> gamePoints, boolean chalenged, int typeOfPlayer, String name, String lastname, String idInGame) {
-        this.username = username;
-        this.gameId = gameId;
-        this.gamesPlayed = gamesPlayed;
-        this.gamePoints = gamePoints;
-        this.challenged = chalenged;
-        this.typeOfPlayer = typeOfPlayer;
-        this.name = name;
-        this.lastname = lastname;
-        this.idInGame = idInGame;
-    }
-
     public String getUsername() {
         return username;
     }
@@ -97,30 +119,6 @@ public class Player {
 
     public void setGameId(String gameId) {
         this.gameId = gameId;
-    }
-
-    public ArrayList<Boolean> getGamesPlayed() {
-        return gamesPlayed;
-    }
-
-    public void setGamesPlayed(ArrayList<Boolean> gamesPlayed) {
-        this.gamesPlayed = gamesPlayed;
-    }
-
-    public ArrayList<Integer> getGamePoints() {
-        return gamePoints;
-    }
-
-    public void setGamePoints(ArrayList<Integer> gamePoints) {
-        this.gamePoints = gamePoints;
-    }
-
-    public Boolean isChalenged() {
-        return challenged;
-    }
-
-    public void setChalenged(Boolean chalenged) {
-        this.challenged = chalenged;
     }
 
     public int getTypeOfPlayer() {
@@ -145,10 +143,6 @@ public class Player {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
-    }
-
-    public String getIdInGame() {
-        return idInGame;
     }
 
     public void setIdInGame(String idInGame) {

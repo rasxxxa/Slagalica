@@ -67,11 +67,10 @@ public class MojBrojGame extends AppCompatActivity implements GameInterface {
         }
         SharedPreferences preferences = getSharedPreferences(MainActivity.historyPointsPreferencesKey[SinglePlayerActivity.typeOfGame.getValue()], MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        if (SinglePlayerActivity.typeOfGame == TypeOfGame.MultiPlayer)
-        {
+        if (SinglePlayerActivity.typeOfGame == TypeOfGame.MultiPlayer) {
             String pointsDatabase = getResources().getString(R.string.pointsFirebase) + MainActivity.typeOfPlayer;
             int gameId = 1;
-            connectionController.updatePoints(this,pointsDatabase,points,String.valueOf(gameId));
+            connectionController.updatePoints(this, pointsDatabase, points, String.valueOf(gameId));
         }
         if (points == 0) {
             editor.putInt(gameName + getResources().getString(R.string.Points), 0);
@@ -114,8 +113,8 @@ public class MojBrojGame extends AppCompatActivity implements GameInterface {
         allButtons = new Stack<>();
         List<Integer> numbersGenerated = SinglePlayerActivity.game.getGame2Numbers();
         ConstraintLayout constraintLayout = findViewById(R.id.layoutMojBroj);
-        SharedPreferences preferences = getSharedPreferences(MainActivity.settingsPreferencesKey,MODE_PRIVATE);
-        String color = preferences.getString(getResources().getString(R.string.backgroundColorKey),getResources().getString(R.string.color1));
+        SharedPreferences preferences = getSharedPreferences(MainActivity.settingsPreferencesKey, MODE_PRIVATE);
+        String color = preferences.getString(getResources().getString(R.string.backgroundColorKey), getResources().getString(R.string.color1));
         constraintLayout.setBackgroundColor(Color.parseColor(color));
         timeClock = getResources().getInteger(R.integer.timeGame2);
         clockInterval = getResources().getInteger(R.integer.clockInterval);
@@ -124,7 +123,7 @@ public class MojBrojGame extends AppCompatActivity implements GameInterface {
         textViewTimer = findViewById(R.id.textViewTimer);
         for (int i = 0; i < getResources().getInteger(R.integer.numberOfNumbers); i++) {
 
-            int id = getResources().getIdentifier(getResources().getString(R.string.buttonPrefix) + (i+1) + gameName, "id", getPackageName());
+            int id = getResources().getIdentifier(getResources().getString(R.string.buttonPrefix) + (i + 1) + gameName, "id", getPackageName());
             Button button = findViewById(id);
             if (i == 0) {
                 mainNumber = numbersGenerated.get(i);
@@ -200,6 +199,6 @@ public class MojBrojGame extends AppCompatActivity implements GameInterface {
 
     @Override
     public void onBackPressed() {
-        DialogBuilder.createAlertDialogForExit(this,timer).show();
+        DialogBuilder.createAlertDialogForExit(this, timer).show();
     }
 }

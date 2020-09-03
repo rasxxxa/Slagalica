@@ -51,7 +51,6 @@ public class SlagalicaGame extends AppCompatActivity implements GameInterface {
         SharedPreferences preferences = getSharedPreferences(MainActivity.settingsPreferencesKey,MODE_PRIVATE);
         String color = preferences.getString(getResources().getString(R.string.backgroundColorKey),getResources().getString(R.string.color1));
         constraintLayout.setBackgroundColor(Color.parseColor(color));
-        ArrayList<Button> letterButtons = new ArrayList<>();
         List<String> randomLetters;
         buttonClicked = new Stack<>();
         editTextUserInput = findViewById(R.id.editText1_Game1);
@@ -68,7 +67,6 @@ public class SlagalicaGame extends AppCompatActivity implements GameInterface {
             int id = getResources().getIdentifier(getResources().getString(R.string.buttonPrefix) + i + gameName, "id", getPackageName());
             Button button = findViewById(id);
             button.setText(randomLetters.get(i - 1).toUpperCase());
-            letterButtons.add(button);
         }
         controller.startLongestWordFinder(lettersChar);
         // Creating timer

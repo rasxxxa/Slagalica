@@ -36,12 +36,12 @@
             </TextView>
 
             <TextView
-                style="@style/SmallHeader"
                 android:id="@+id/textViewTimer"
+                style="@style/SmallHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
                 android:text=""
-                android:layout_marginRight="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -63,7 +63,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/field"
                 android:onClick="onClickLetterButton"
-                android:text="" />
+                android:text=""
+                tools:ignore="NestedWeights" />
 
             <Button
                 android:id="@+id/button_2Game_1"
@@ -119,7 +120,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/field"
                 android:onClick="onClickLetterButton"
-                android:text="" />
+                android:text=""
+                tools:ignore="NestedWeights" />
 
             <Button
                 android:id="@+id/button_8Game_1"
@@ -178,7 +180,8 @@
             android:text=""
             android:textAlignment="center"
             android:textColor="@color/fontColorButtons"
-            android:textSize="40dp" />
+            android:textSize="40sp"
+            tools:ignore="Autofill,LabelFor" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -193,7 +196,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/field"
                 android:onClick="checkWord"
-                android:text="@string/questionMark">
+                android:text="@string/questionMark"
+                tools:ignore="NestedWeights">
 
             </Button>
 
@@ -204,11 +208,7 @@
                 android:background="@drawable/field"
                 android:onClick="submit"
                 android:text="@string/okMark"
-                android:textColor="#00FF00"
-
-                >
-
-            </Button>
+                android:textColor="#00FF00" />
 
             <Button
                 android:id="@+id/buttonDelete_Game1"
@@ -217,9 +217,7 @@
                 android:background="@drawable/field"
                 android:onClick="eraseAll"
                 android:text="@string/xMark"
-                android:textColor="#FF0000">
-
-            </Button>
+                android:textColor="#FF0000"/>
 
             <Button
                 android:id="@+id/buttonClear_Game1"
@@ -227,9 +225,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/field"
                 android:onClick="deleteLetter"
-                android:text="@string/cMark">
-
-            </Button>
+                android:text="@string/cMark"/>
         </LinearLayout>
 
 

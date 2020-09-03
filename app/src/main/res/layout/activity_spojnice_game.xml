@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
     tools:context=".Activities.Games.SpojniceGame">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,13 +15,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintTop_toTopOf="parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <TextView
                 style="@style/SmallHeader"
@@ -30,194 +30,193 @@
                 android:text="@string/spojnice"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-            </TextView>
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
-                style="@style/SmallHeader"
                 android:id="@+id/textViewTimer"
+                style="@style/SmallHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
                 android:text=""
-                android:layout_marginRight="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button_1Game_3"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/field"
+                    android:onClick="leftSideClick"
+                    android:text=""
+                    tools:ignore="NestedWeights" />
+
+                <Button
+                    android:id="@+id/button_2Game_3"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/field"
+                    android:onClick="leftSideClick"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/button_3Game_3"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/field"
+                    android:onClick="leftSideClick"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/button_4Game_3"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/field"
+                    android:onClick="leftSideClick"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/button_5Game_3"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/field"
+                    android:onClick="leftSideClick"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/button_6Game_3"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/field"
+                    android:onClick="leftSideClick"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/button_7Game_3"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/field"
+                    android:onClick="leftSideClick"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/button_8Game_3"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/field"
+                    android:onClick="leftSideClick"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
+                <Button
+                    android:id="@+id/button_9Game_3"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/field"
+                    android:onClick="rightSideClick"
+                    android:text=""
+                    tools:ignore="NestedWeights" />
 
-            </TextView>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
->
+                <Button
+                    android:id="@+id/button_10Game_3"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/field"
+                    android:onClick="rightSideClick"
+                    android:text="" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+                <Button
+                    android:id="@+id/button_11Game_3"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/field"
+                    android:onClick="rightSideClick"
+                    android:text="" />
 
-            <Button
-                android:id="@+id/button_1Game_3"
-                android:background="@drawable/field"
-                android:layout_width="match_parent"
-                style="@style/ButtonStyleForGames"
-                android:layout_weight="1"
-                android:onClick="leftSideClick"
-                android:text="" />
+                <Button
+                    android:id="@+id/button_12Game_3"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/field"
+                    android:onClick="rightSideClick"
+                    android:text="" />
 
-            <Button
-                android:id="@+id/button_2Game_3"
-                style="@style/ButtonStyleForGames"
-                android:background="@drawable/field"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:onClick="leftSideClick"
-                android:text="" />
+                <Button
+                    android:id="@+id/button_13Game_3"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/field"
+                    android:onClick="rightSideClick"
+                    android:text="" />
 
-            <Button
-                android:id="@+id/button_3Game_3"
-                style="@style/ButtonStyleForGames"
-                android:background="@drawable/field"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:onClick="leftSideClick"
-                android:text="" />
+                <Button
+                    android:id="@+id/button_14Game_3"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/field"
+                    android:onClick="rightSideClick"
+                    android:text="" />
 
-            <Button
-                android:id="@+id/button_4Game_3"
-                style="@style/ButtonStyleForGames"
-                android:background="@drawable/field"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:onClick="leftSideClick"
-                android:text="" />
+                <Button
+                    android:id="@+id/button_15Game_3"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/field"
+                    android:onClick="rightSideClick"
+                    android:text="" />
 
-            <Button
-                android:id="@+id/button_5Game_3"
-                style="@style/ButtonStyleForGames"
-                android:background="@drawable/field"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:onClick="leftSideClick"
-                android:text="" />
+                <Button
+                    android:id="@+id/button_16Game_3"
+                    style="@style/ButtonStyleForGames"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/field"
+                    android:onClick="rightSideClick"
+                    android:text="" />
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/button_6Game_3"
-                style="@style/ButtonStyleForGames"
-                android:background="@drawable/field"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:onClick="leftSideClick"
-                android:text="" />
-
-            <Button
-                android:id="@+id/button_7Game_3"
-                style="@style/ButtonStyleForGames"
-                android:background="@drawable/field"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:onClick="leftSideClick"
-                android:text="" />
-
-            <Button
-                android:id="@+id/button_8Game_3"
-                style="@style/ButtonStyleForGames"
-                android:background="@drawable/field"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:onClick="leftSideClick"
-                android:text="" />
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <Button
-                android:id="@+id/button_9Game_3"
-                style="@style/ButtonStyleForGames"
-                android:background="@drawable/field"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:onClick="rightSideClick"
-                android:text="" />
-
-            <Button
-                android:id="@+id/button_10Game_3"
-                style="@style/ButtonStyleForGames"
-                android:background="@drawable/field"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:onClick="rightSideClick"
-                android:text="" />
-
-            <Button
-                android:id="@+id/button_11Game_3"
-                style="@style/ButtonStyleForGames"
-                android:background="@drawable/field"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:onClick="rightSideClick"
-                android:text="" />
-
-            <Button
-                android:id="@+id/button_12Game_3"
-                style="@style/ButtonStyleForGames"
-                android:background="@drawable/field"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:onClick="rightSideClick"
-                android:text="" />
-
-            <Button
-                android:id="@+id/button_13Game_3"
-                style="@style/ButtonStyleForGames"
-                android:background="@drawable/field"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:onClick="rightSideClick"
-                android:text="" />
-
-            <Button
-                android:id="@+id/button_14Game_3"
-                style="@style/ButtonStyleForGames"
-                android:background="@drawable/field"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:onClick="rightSideClick"
-                android:text="" />
-
-            <Button
-                android:id="@+id/button_15Game_3"
-                style="@style/ButtonStyleForGames"
-                android:background="@drawable/field"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:onClick="rightSideClick"
-                android:text="" />
-
-            <Button
-                android:id="@+id/button_16Game_3"
-                style="@style/ButtonStyleForGames"
-                android:background="@drawable/field"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:onClick="rightSideClick"
-                android:text="" />
-        </LinearLayout>
-
-    </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

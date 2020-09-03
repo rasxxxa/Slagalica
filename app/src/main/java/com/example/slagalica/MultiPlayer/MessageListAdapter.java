@@ -1,5 +1,6 @@
 package com.example.slagalica.MultiPlayer;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import com.example.slagalica.Activities.MainMenu.MainActivity;
 import com.example.slagalica.R;
 
 import java.util.List;
+import java.util.Objects;
 
 public class MessageListAdapter extends ArrayAdapter<Message> {
 
@@ -29,30 +31,31 @@ public class MessageListAdapter extends ArrayAdapter<Message> {
         resourceId = resource;
     }
 
+    @SuppressLint("ViewHolder")
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        int id = getItem(position).getSenderId();
-        String name = getItem(position).getSenderName();
-        String lastname = getItem(position).getSenderLastName();
-        String message = getItem(position).getMessage();
+        int id = Objects.requireNonNull(getItem(position)).getSenderId();
+        String name = Objects.requireNonNull(getItem(position)).getSenderName();
+        String lastname = Objects.requireNonNull(getItem(position)).getSenderLastName();
+        String message = Objects.requireNonNull(getItem(position)).getMessage();
         String fullName = name + " " + lastname;
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(resourceId,parent,false);
-        TextView textViewFullName = (TextView)convertView.findViewById(R.id.senderInfo);
-        TextView textViewMessage = (TextView)convertView.findViewById(R.id.senderMessage);
+        TextView textViewFullName = convertView.findViewById(R.id.senderInfo);
+        TextView textViewMessage = convertView.findViewById(R.id.senderMessage);
         textViewFullName.setText(fullName);
         textViewMessage.setText(message);
         if (id == MainActivity.typeOfPlayer)
         {
             LinearLayout layoutParrent = (LinearLayout) textViewFullName.getParent();
-            layoutParrent.setGravity(Gravity.LEFT);
+            layoutParrent.setGravity(Gravity.START);
             layoutParrent.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
             layoutParrent.setTextDirection(View.TEXT_DIRECTION_LTR);
         }else
         {
             LinearLayout layoutParrent = (LinearLayout) textViewFullName.getParent();
-            layoutParrent.setGravity(Gravity.RIGHT);
+            layoutParrent.setGravity(Gravity.END);
             layoutParrent.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_END);
             layoutParrent.setTextDirection(View.TEXT_DIRECTION_RTL);
         }

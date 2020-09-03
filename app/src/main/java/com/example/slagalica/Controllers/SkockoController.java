@@ -82,10 +82,6 @@ public class SkockoController {
         return numberOfRows;
     }
 
-    public int getMaxValueInCombination() {
-        return maxValueInCombination;
-    }
-
     public int[] getResourceImageId() {
         return ResourceImageId;
     }

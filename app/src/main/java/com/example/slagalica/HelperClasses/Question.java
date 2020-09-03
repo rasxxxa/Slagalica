@@ -12,16 +12,13 @@ public class Question {
     public Question(String question)
     {
         this.question = question;
-        possibleAnswers = new ArrayList<String>();
+        possibleAnswers = new ArrayList<>();
     }
 
     public String getQuestion() {
         return question;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
-    }
 
     public List<String> getPossibleAnswers() {
         return possibleAnswers;

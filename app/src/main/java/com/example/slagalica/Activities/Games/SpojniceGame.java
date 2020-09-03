@@ -76,7 +76,6 @@ public class SpojniceGame extends AppCompatActivity implements GameInterface {
         List<String> leftWords = new ArrayList<>();
         List<String> rightWords = new ArrayList<>();
         leftButtons = new ArrayList<>();
-        List<Button> rightButtons = new ArrayList<>();
         chosen = null;
         textViewTimer = findViewById(R.id.textViewTimer);
         allWords = SinglePlayerActivity.game.getGame3Words();
@@ -100,7 +99,6 @@ public class SpojniceGame extends AppCompatActivity implements GameInterface {
             else
             {
                 button.setText(rightWords.get(i - numOfRows - 1));
-                rightButtons.add(button);
             }
         }
         // Initialize timer

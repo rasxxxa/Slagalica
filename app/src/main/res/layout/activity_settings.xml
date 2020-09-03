@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/colorBackground"></TextView>
+            android:text="@string/colorBackground"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,54 +34,48 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="click">
-
-            </Button>
+                android:onClick="click"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/button_2Settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="click">
-
-            </Button>
+                android:onClick="click"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/button_3Settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="click">
-
-            </Button>
+                android:onClick="click"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/button_4Settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="click">
-
-            </Button>
+                android:onClick="click"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/button_5Settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="click">
-
-            </Button>
+                android:onClick="click"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/button_6Settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="click">
-
-            </Button>
+                android:onClick="click"
+                tools:ignore="ButtonStyle" />
         </LinearLayout>
 
         <LinearLayout
@@ -94,54 +88,48 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="click">
-
-            </Button>
+                android:onClick="click"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/button_8Settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="click">
-
-            </Button>
+                android:onClick="click"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/button_9Settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="click">
-
-            </Button>
+                android:onClick="click"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/button_10Settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="click">
-
-            </Button>
+                android:onClick="click"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/button_11Settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="click">
-
-            </Button>
+                android:onClick="click"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/button_12Settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="click">
-
-            </Button>
+                android:onClick="click"
+                tools:ignore="ButtonStyle" />
         </LinearLayout>
 
         <LinearLayout
@@ -153,51 +141,58 @@
                 style="@style/SmallHeader"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="Параметри за онлајн игру"
-                android:textAlignment="center"></TextView>
+                android:text="@string/settingsParameters"
+                android:textAlignment="center"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-
-                android:text="ИМЕ:"
+                android:text="@string/name"
                 style="@style/SmallHeader"
-                android:layout_gravity="left"></TextView>
+                android:layout_gravity="start"/>
+
             <EditText
                 android:layout_width="match_parent"
                 android:id="@+id/editTextName"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:background="#FFFFFF"
-                android:text=""></EditText>
+                android:hint="@string/name_"
+                android:text=""
+                tools:ignore="Autofill,TextFields" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="ПРЕЗИМЕ:"
+                android:text="@string/lastname"
                 style="@style/SmallHeader"
-                android:layout_gravity="left"></TextView>
+                android:layout_gravity="start"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/editTextLastName"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:background="#FFFFFF"
-                android:text=""></EditText>
+                android:hint="@string/lastname_"
+                android:text=""
+                tools:ignore="Autofill,TextFields" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="КОРИСНИЧКО ИМЕ:"
+                android:text="@string/username"
                 style="@style/SmallHeader"
-                android:layout_gravity="left"></TextView>
+                android:layout_gravity="start"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:id="@+id/editTextUserName"
                 android:background="#FFFFFF"
-                android:text=""></EditText>
+                android:hint="@string/username_"
+                android:text=""
+                tools:ignore="Autofill,TextFields" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -208,7 +203,8 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:onClick="apply"
-                    android:background="@drawable/okbutton"></Button>
+                    android:background="@drawable/okbutton"
+                    tools:ignore="ButtonStyle" />
                 <Button
                     style="@style/ButtonStyleForGames"
                     android:layout_weight="0"
@@ -217,7 +213,7 @@
                     android:onClick="check"
                     android:background="@drawable/field"
                     android:text="@string/questionMark"
-                    ></Button>
+                    tools:ignore="InefficientWeight" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

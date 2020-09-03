@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutAsocijacije"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/layoutAsocijacije"
     android:background="@color/backgroundColor"
     tools:context=".Activities.Games.AsocijacijeGame">
 
@@ -16,6 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,12 +35,12 @@
             </TextView>
 
             <TextView
-                style="@style/SmallHeader"
                 android:id="@+id/textViewTimer"
+                style="@style/SmallHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
                 android:text=""
-                android:layout_marginRight="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -49,11 +50,12 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -61,14 +63,15 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="NestedWeights">
 
                 <Button
                     android:id="@+id/button_A1Game_6"
                     style="@style/ButtonStyleForGames"
-                    android:background="@drawable/field"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/field"
                     android:onClick="openField">
 
                 </Button>
@@ -76,9 +79,9 @@
                 <Button
                     android:id="@+id/button_A2Game_6"
                     style="@style/ButtonStyleForGames"
-                    android:background="@drawable/field"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/field"
                     android:onClick="openField">
 
                 </Button>
@@ -87,8 +90,8 @@
                     android:id="@+id/button_A3Game_6"
                     style="@style/ButtonStyleForGames"
                     android:layout_width="match_parent"
-                    android:background="@drawable/field"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/field"
                     android:onClick="openField">
 
                 </Button>
@@ -96,21 +99,19 @@
                 <Button
                     android:id="@+id/button_A4Game_6"
                     style="@style/ButtonStyleForGames"
-                    android:background="@drawable/field"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="openField">
-
-                </Button>
+                    android:background="@drawable/field"
+                    android:onClick="openField" />
 
                 <EditText
                     android:id="@+id/editText_AGame_6"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:hint="@string/columnA"
                     android:textAlignment="center"
-                    android:tooltipText="Колона А">
-
-                </EditText>
+                    android:tooltipText="@string/columnA"
+                    tools:ignore="Autofill,TextFields" />
             </LinearLayout>
 
             <LinearLayout
@@ -127,9 +128,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/field"
-                    android:onClick="openField">
-
-                </Button>
+                    android:onClick="openField" />
 
                 <Button
                     android:id="@+id/button_B2Game_6"
@@ -137,9 +136,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/field"
-                    android:onClick="openField">
-
-                </Button>
+                    android:onClick="openField" />
 
                 <Button
                     android:id="@+id/button_B3Game_6"
@@ -147,9 +144,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/field"
-                    android:onClick="openField">
-
-                </Button>
+                    android:onClick="openField" />
 
                 <Button
                     android:id="@+id/button_B4Game_6"
@@ -157,18 +152,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/field"
-                    android:onClick="openField">
-
-                </Button>
+                    android:onClick="openField" />
 
                 <EditText
                     android:id="@+id/editText_BGame_6"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:hint="@string/columnB"
                     android:textAlignment="center"
-                    android:tooltipText="Колона Б">
-
-                </EditText>
+                    android:tooltipText="@string/columnB"
+                    tools:ignore="Autofill,TextFields" />
             </LinearLayout>
 
             <LinearLayout
@@ -185,9 +178,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/field"
-                    android:onClick="openField">
-
-                </Button>
+                    android:onClick="openField" />
 
                 <Button
                     android:id="@+id/button_C2Game_6"
@@ -195,9 +186,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/field"
-                    android:onClick="openField">
-
-                </Button>
+                    android:onClick="openField" />
 
                 <Button
                     android:id="@+id/button_C3Game_6"
@@ -205,9 +194,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/field"
-                    android:onClick="openField">
-
-                </Button>
+                    android:onClick="openField" />
 
                 <Button
                     android:id="@+id/button_C4Game_6"
@@ -215,18 +202,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/field"
-                    android:onClick="openField">
-
-                </Button>
+                    android:onClick="openField" />
 
                 <EditText
                     android:id="@+id/editText_CGame_6"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:hint="@string/columnC"
                     android:textAlignment="center"
-                    android:tooltipText="Колона Ц">
-
-                </EditText>
+                    android:tooltipText="@string/columnC"
+                    tools:ignore="Autofill,TextFields" />
             </LinearLayout>
 
             <LinearLayout
@@ -243,9 +228,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/field"
-                    android:onClick="openField">
-
-                </Button>
+                    android:onClick="openField" />
 
                 <Button
                     android:id="@+id/button_D2Game_6"
@@ -253,9 +236,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/field"
-                    android:onClick="openField">
-
-                </Button>
+                    android:onClick="openField" />
 
                 <Button
                     android:id="@+id/button_D3Game_6"
@@ -263,9 +244,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/field"
-                    android:onClick="openField">
-
-                </Button>
+                    android:onClick="openField" />
 
                 <Button
                     android:id="@+id/button_D4Game_6"
@@ -273,18 +252,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/field"
-                    android:onClick="openField">
-
-                </Button>
+                    android:onClick="openField" />
 
                 <EditText
                     android:id="@+id/editText_DGame_6"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:hint="@string/columnD"
                     android:textAlignment="center"
-                    android:tooltipText="Колона Д">
-
-                </EditText>
+                    android:tooltipText="@string/columnD"
+                    tools:ignore="Autofill,TextFields" />
             </LinearLayout>
         </LinearLayout>
 
@@ -296,8 +273,10 @@
                 android:id="@+id/main_solution"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:hint="@string/finalSolution"
                 android:textAlignment="center"
-                android:tooltipText="Коначно решење"></EditText>
+                android:tooltipText="@string/finalSolution"
+                tools:ignore="Autofill,TextFields" />
         </LinearLayout>
 
 

@@ -10,7 +10,7 @@ public class Association {
 
     public Association() {
         mainSolution = "";
-        columnsList = new ArrayList<Column>();
+        columnsList = new ArrayList<>();
     }
 
     public String getMainSolution() {

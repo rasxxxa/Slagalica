@@ -197,8 +197,8 @@ public class AsocijacijeController {
         }
         if (word1.length() == transformedWord.length() && word1.length() < 4) {
             int numberOfTries = 0;
-            int tryNumber = (word1.length() >= transformedWord.length()) ? transformedWord.length() : word1.length();
-            int longerWord = (word1.length() >= transformedWord.length()) ? word1.length() : transformedWord.length();
+            int tryNumber = Math.min(word1.length(), transformedWord.length()); // warning for some reason, words are not same...
+            int longerWord = Math.max(word1.length(), transformedWord.length());
 
             for (int i = 0; i < tryNumber; i++) {
                 if (word1.charAt(i) == transformedWord.charAt(i)) {
@@ -217,9 +217,7 @@ public class AsocijacijeController {
                     }
                 }
             }
-            if (numberOfTries == longerWord) {
-                return true;
-            }
+            return numberOfTries == longerWord;
         } else if (word1.length() >= 4) {
 
             int numberOfTries1 = 0;
@@ -303,9 +301,7 @@ public class AsocijacijeController {
                     pointer2++;
                 }
             }
-            if ((Math.abs(word1.length() - numberOfTries1) <= 1 && numberOfMisses1 <= 1) || (Math.abs(word1.length() - numberOfTries2)) <= 1 && numberOfMisses2 <= 1) {
-                return true;
-            }
+            return (Math.abs(word1.length() - numberOfTries1) <= 1 && numberOfMisses1 <= 1) || (Math.abs(word1.length() - numberOfTries2)) <= 1 && numberOfMisses2 <= 1;
         }
         return false;
     }

@@ -1,21 +1,11 @@
 package com.example.slagalica.MultiPlayer;
 
-import java.util.Date;
-import java.util.Calendar;
-
 public class Message {
 
     public int senderId;
     public String senderName;
     public String senderLastName;
     public String message;
-
-    public Message(int senderId, String senderName, String senderLastName,String message) {
-        this.senderId = senderId;
-        this.senderName = senderName;
-        this.senderLastName = senderLastName;
-        this.message = message;
-    }
 
     public Message()
     {

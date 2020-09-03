@@ -10,6 +10,14 @@ public class ShortPlayerInfo {
     public ShortPlayerInfo() {
     }
 
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     public ShortPlayerInfo(String username, String name, String lastName) {
         this.username = username;
         this.name = name;
@@ -19,6 +27,7 @@ public class ShortPlayerInfo {
     @Override
     public boolean equals(@Nullable Object obj) {
         ShortPlayerInfo info = (ShortPlayerInfo)obj;
+        assert info != null;
         return info.getUsername().equals(this.username);
     }
 
@@ -38,11 +47,4 @@ public class ShortPlayerInfo {
         this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 }

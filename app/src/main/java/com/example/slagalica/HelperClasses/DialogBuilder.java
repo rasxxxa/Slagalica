@@ -14,7 +14,6 @@ import androidx.appcompat.app.AlertDialog;
 import com.example.slagalica.Connection.ConnectionController;
 import com.example.slagalica.Activities.Games.GameInterface;
 import com.example.slagalica.Activities.MainMenu.MainActivity;
-import com.example.slagalica.Activities.MainMenu.MultiPlayerActivity;
 import com.example.slagalica.Activities.MainMenu.Settings;
 import com.example.slagalica.Activities.MainMenu.SinglePlayerActivity;
 import com.example.slagalica.MultiPlayer.Player;
@@ -69,7 +68,6 @@ public class DialogBuilder {
                         intent.putExtra(MainActivity.existGameInHistory, true);
                         break;
                 }
-                MainActivity.typeOfGame = 1;
                 MainActivity.typeOfGame = 1;
                 context.startActivity(intent);
             }
@@ -184,7 +182,7 @@ public class DialogBuilder {
 
     public static android.app.AlertDialog.Builder createDialogForGame(String message, final Activity context) {
         android.app.AlertDialog.Builder builder1 = new android.app.AlertDialog.Builder(context);
-        builder1.setTitle("Крај игре");
+        builder1.setTitle(context.getResources().getString(R.string.endGame));
         builder1.setMessage(message);
         builder1.setCancelable(false);
         builder1.setNeutralButton(android.R.string.ok,
@@ -200,8 +198,8 @@ public class DialogBuilder {
 
     public static android.app.AlertDialog.Builder dialogPlayerRefused(final Context context) {
         android.app.AlertDialog.Builder builder1 = new android.app.AlertDialog.Builder(context);
-        builder1.setTitle("Игра је отказана");
-        builder1.setMessage("Корисник је одбио изазов.");
+        builder1.setTitle(context.getResources().getString(R.string.refusedGame));
+        builder1.setMessage(context.getResources().getString(R.string.userRefusedGame));
         builder1.setNeutralButton(android.R.string.ok,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

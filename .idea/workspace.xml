@@ -12,14 +12,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58933a9e-da51-4074-be85-79b241215915" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/Chat/ChatActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/Chat/ChatActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/Games/GameInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/Games/GameInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/Games/MojBrojGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/Games/MojBrojGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/Games/SlagalicaGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/Games/SlagalicaGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/Games/SpojniceGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/Games/SpojniceGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/MainMenu/MultiPlayerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/MainMenu/MultiPlayerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/MainMenu/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/MainMenu/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/MainMenu/SinglePlayerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/MainMenu/SinglePlayerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Connection/ConnectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Connection/ConnectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Controllers/AsocijacijeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Controllers/AsocijacijeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Controllers/MojBrojController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Controllers/MojBrojController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Controllers/SkockoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Controllers/SkockoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Controllers/SlagalicaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Controllers/SlagalicaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Controllers/SpojniceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Controllers/SpojniceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Exceptions/ErrorInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Exceptions/ErrorInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/HelperClasses/Association.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/HelperClasses/Association.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/HelperClasses/Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/HelperClasses/Column.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/HelperClasses/DialogBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/HelperClasses/DialogBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/HelperClasses/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/HelperClasses/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/HelperClasses/ResourceHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/HelperClasses/ResourceHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/MultiPlayer/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/MultiPlayer/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/MultiPlayer/MessageListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/MultiPlayer/MessageListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/MultiPlayer/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/MultiPlayer/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/MultiPlayer/ShortPlayerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/slagalica/MultiPlayer/ShortPlayerInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_asocijacije_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_asocijacije_game.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_chat.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_chat.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_ko_zna_zna_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_ko_zna_zna_game.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_moj_broj_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_moj_broj_game.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_single_player.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_single_player.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_skocko_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_skocko_game.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_slagalica_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_slagalica_game.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_spojnice_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_spojnice_game.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/adapterviewlayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/adapterviewlayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/message_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/message_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="s4vwvcjffmbi6lau" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -95,7 +143,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -477,10 +525,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="251" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1596200025467" />
-    <state x="788" y="139" width="748" height="567" key="#com.intellij.ide.util.MemberChooser" timestamp="1598905613293">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="985" y="175" width="748" height="567" key="#com.intellij.ide.util.MemberChooser" timestamp="1599164236519">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="788" y="139" width="748" height="567" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1598905613293" />
+    <state x="985" y="175" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1599164236519" />
     <state x="444" y="338" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1598906881650">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -536,54 +585,54 @@
     </state>
     <state x="592" y="218" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1597870216232" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595879013736" />
-    <state width="1491" height="212" key="GridCell.Tab.0.bottom" timestamp="1598823958733">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="247" key="GridCell.Tab.0.bottom" timestamp="1599164111817">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="745" height="260" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1596130451530" />
     <state width="1491" height="212" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598823958733" />
-    <state width="1877" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595964676002" />
-    <state width="1491" height="212" key="GridCell.Tab.0.center" timestamp="1598823958733">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="247" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599164111817" />
+    <state width="1877" height="247" key="GridCell.Tab.0.center" timestamp="1599164111817">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="745" height="260" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1596130451530" />
     <state width="1491" height="212" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598823958733" />
-    <state width="1877" height="248" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595964676002" />
-    <state width="1491" height="212" key="GridCell.Tab.0.left" timestamp="1598823958733">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="247" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599164111817" />
+    <state width="1877" height="247" key="GridCell.Tab.0.left" timestamp="1599164111816">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="745" height="260" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1596130451530" />
     <state width="1491" height="212" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598823958733" />
-    <state width="1877" height="248" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595964676001" />
-    <state width="1491" height="212" key="GridCell.Tab.0.right" timestamp="1598823958733">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="247" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599164111816" />
+    <state width="1877" height="247" key="GridCell.Tab.0.right" timestamp="1599164111817">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="745" height="260" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1596130451530" />
     <state width="1491" height="212" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598823958733" />
-    <state width="1877" height="248" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595964676002" />
-    <state width="1491" height="212" key="GridCell.Tab.1.bottom" timestamp="1598823958733">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="247" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599164111817" />
+    <state width="1877" height="247" key="GridCell.Tab.1.bottom" timestamp="1599164111817">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="745" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1596130451531" />
     <state width="1491" height="212" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598823958733" />
-    <state width="1877" height="248" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595964676003" />
-    <state width="1491" height="212" key="GridCell.Tab.1.center" timestamp="1598823958733">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="247" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599164111817" />
+    <state width="1877" height="247" key="GridCell.Tab.1.center" timestamp="1599164111817">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="745" height="260" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1596130451531" />
     <state width="1491" height="212" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1598823958733" />
-    <state width="1877" height="248" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595964676002" />
-    <state width="1491" height="212" key="GridCell.Tab.1.left" timestamp="1598823958733">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="247" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599164111817" />
+    <state width="1877" height="247" key="GridCell.Tab.1.left" timestamp="1599164111817">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="745" height="260" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1596130451530" />
     <state width="1491" height="212" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1598823958733" />
-    <state width="1877" height="248" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595964676002" />
-    <state width="1491" height="212" key="GridCell.Tab.1.right" timestamp="1598823958733">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="247" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599164111817" />
+    <state width="1877" height="247" key="GridCell.Tab.1.right" timestamp="1599164111817">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="745" height="260" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1596130451531" />
     <state width="1491" height="212" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1598823958733" />
-    <state width="1877" height="248" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595964676002" />
+    <state width="1877" height="247" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599164111817" />
     <state x="571" y="192" key="RollbackChangesDialog" timestamp="1598190328795">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -619,11 +668,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="454" y="191" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1598901173869" />
-    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup" timestamp="1598810917908">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599159874554">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="498" y="178" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1598810917908" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595965584977" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599159874554" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -665,12 +714,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/Games/MojBrojGame.java</url>
-          <line>116</line>
+          <line>115</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/Games/MojBrojGame.java</url>
-          <line>140</line>
+          <line>139</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -679,38 +728,23 @@
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/slagalica/MultiPlayer/PlayerListAdapter.java</url>
-          <line>106</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/Games/MojBrojGame.java</url>
-          <line>197</line>
+          <line>196</line>
           <option name="timeStamp" value="94" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/MainMenu/Settings.java</url>
-          <line>127</line>
+          <line>121</line>
           <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/MainMenu/Settings.java</url>
-          <line>100</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Game/Game.java</url>
-          <line>152</line>
+          <line>126</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/MainMenu/SinglePlayerActivity.java</url>
-          <line>215</line>
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/Games/SpojniceGame.java</url>
-          <line>170</line>
+          <line>168</line>
           <option name="timeStamp" value="121" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -725,13 +759,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Connection/ConnectionController.java</url>
-          <line>397</line>
+          <line>400</line>
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Connection/ConnectionController.java</url>
-          <line>668</line>
+          <line>673</line>
           <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Connection/ConnectionController.java</url>
+          <line>711</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/slagalica/Activities/MainMenu/SinglePlayerActivity.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="131" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

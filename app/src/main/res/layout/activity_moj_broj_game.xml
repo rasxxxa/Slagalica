@@ -31,9 +31,7 @@
                 android:text="@string/moj_broj"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-            </TextView>
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
                 style="@style/SmallHeader"
@@ -43,10 +41,8 @@
                 android:text=""
                 android:layout_marginEnd="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"/>
 
-
-            </TextView>
         </androidx.constraintlayout.widget.ConstraintLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -214,14 +210,14 @@
                 android:id="@+id/textView1_Game2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:text="@string/resultMojBroj" />
 
             <TextView
                 android:id="@+id/textView2_Game2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:text="" />
@@ -229,11 +225,12 @@
             <EditText
                 android:id="@+id/editText_1Game_2"
                 android:layout_width="match_parent"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:textStyle="italic"
                 android:textAlignment="center"
                 android:enabled="false"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                tools:ignore="Autofill,LabelFor,TextFields">
 
             </EditText>
         </LinearLayout>

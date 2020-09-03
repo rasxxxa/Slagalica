@@ -113,7 +113,7 @@ public class ResourceHelper {
             String line;
             //reading file
             while ((line = bufferedReader.readLine()) != null) {
-                StringBuffer question = new StringBuffer();
+                StringBuilder question = new StringBuilder();
                 String sampleLine = line;
 
                 while (sampleLine.charAt(0) != 'а' || sampleLine.charAt(1) != ')') {
@@ -126,7 +126,7 @@ public class ResourceHelper {
                 String responseA = sampleLine;
                 String responseB = bufferedReader.readLine();
                 String responseC = bufferedReader.readLine();
-                int answer = Integer.valueOf(bufferedReader.readLine());
+                int answer = Integer.parseInt(bufferedReader.readLine());
 
                 //Creating question and adding question to ArrayList of questions
                 Question fQuestion = new Question(question.toString());
@@ -256,7 +256,7 @@ public class ResourceHelper {
 
     public String createRandomKey(String username)
     {
-        String key = username;
+        StringBuilder key = new StringBuilder(username);
 
         int keyLenght = Math.abs(random.nextInt(20)) +minimumLengthForKey;
 
@@ -268,8 +268,8 @@ public class ResourceHelper {
             {
                 charSelected += 32;
             }
-            key+= (char)(charSelected);
+            key.append((char) (charSelected));
         }
-        return key;
+        return key.toString();
     }
 }

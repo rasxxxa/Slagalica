@@ -58,6 +58,9 @@ public class ConnectionController {
     private DatabaseReference referencePlayers;
     private DatabaseReference referencePoints;
     private DatabaseReference referenceChat;
+    private DatabaseReference referenceSettings;
+
+    private ValueEventListener listenerSettings;
 
     private ConnectionController() {
 
@@ -448,8 +451,10 @@ public class ConnectionController {
             killMultiplayerGame(context, exceptionHandler.getErrorInfo(), null);
             return null;
         }
+        listenerSettings = eventListenerForUser;
         final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(firebaseApp);
-        firebaseDatabase.getReference().child(context.getResources().getString(R.string.playerNode)).addListenerForSingleValueEvent(eventListenerForUser);
+        referenceSettings = firebaseDatabase.getReference().child(context.getResources().getString(R.string.playerNode));
+        referenceSettings.addListenerForSingleValueEvent(eventListenerForUser);
         return eventListenerForUser;
     }
 
@@ -739,5 +744,18 @@ public class ConnectionController {
         Intent intent = new Intent(context, MainActivity.class);
         context.startActivity(intent);
         ((Activity) context).finish();
+    }
+
+    public void releaseSettingsListener()
+    {
+        if (referenceSettings != null)
+        {
+            if (listenerSettings != null)
+            {
+                referenceSettings.removeEventListener(listenerSettings);
+                referenceSettings = null;
+                listenerSettings = null;
+            }
+        }
     }
 }

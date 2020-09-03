@@ -20,7 +20,6 @@ import java.util.ArrayList;
 
 public class MultiPlayerActivity extends AppCompatActivity {
 
-    private ConstraintLayout constraintLayout;
     private ArrayList<Player> players = new ArrayList<>();
     private AlertDialog dialogAccept;
 
@@ -34,7 +33,6 @@ public class MultiPlayerActivity extends AppCompatActivity {
 
     private AlertDialog dialogAwait;
     private ListView mainListView;
-    private SearchView searchView;
     private ConnectionController connectionController;
 
 
@@ -56,7 +54,7 @@ public class MultiPlayerActivity extends AppCompatActivity {
 
     public void initialize() {
         mainListView = findViewById(R.id.listViewMultiplayer);
-        searchView = findViewById(R.id.searchView);
+        SearchView searchView = findViewById(R.id.searchView);
         connectionController = ConnectionController.getInstance();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -80,7 +78,7 @@ public class MultiPlayerActivity extends AppCompatActivity {
             }
         });
         players = new ArrayList<>();
-        constraintLayout = findViewById(R.id.layoutMultiPlayer);
+        ConstraintLayout constraintLayout = findViewById(R.id.layoutMultiPlayer);
         SharedPreferences preferences = getSharedPreferences(MainActivity.settingsPreferencesKey, MODE_PRIVATE);
         String color = preferences.getString(getResources().getString(R.string.backgroundColorKey), getResources().getString(R.string.color1));
         constraintLayout.setBackgroundColor(Color.parseColor(color));

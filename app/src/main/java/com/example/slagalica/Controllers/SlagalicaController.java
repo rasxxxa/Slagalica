@@ -64,7 +64,6 @@ public class SlagalicaController {
     public void startLongestWordFinder(ArrayList<Character> letters)
     {
         RunnableForLongestWord.stopThread = false;
-        ArrayList<Character> characters = new ArrayList<>(letters);
         int numOfThreads = (int)Math.log10(words.size());
         threadsForWordFinder = new RunnableForLongestWord[numOfThreads];
         int distance = words.size() / numOfThreads;
@@ -79,22 +78,18 @@ public class SlagalicaController {
     public String longestWord()
     {
         RunnableForLongestWord.stopThread = true;
-        for (int i = 0; i<threadsForWordFinder.length;i++)
-        {
+        for (RunnableForLongestWord runnableForLongestWord : threadsForWordFinder) {
             try {
-                threadsForWordFinder[i].getThread().join();
-            }catch (Exception e)
-            {
+                runnableForLongestWord.getThread().join();
+            } catch (Exception e) {
                 //
             }
 
         }
         String longestWord = "";
-        for (int i = 0;i<threadsForWordFinder.length;i++)
-        {
-            if (threadsForWordFinder[i].getLongestWord().length() > longestWord.length())
-            {
-                longestWord = threadsForWordFinder[i].getLongestWord();
+        for (RunnableForLongestWord runnableForLongestWord : threadsForWordFinder) {
+            if (runnableForLongestWord.getLongestWord().length() > longestWord.length()) {
+                longestWord = runnableForLongestWord.getLongestWord();
             }
         }
         return longestWord;

@@ -32,7 +32,7 @@ public class SpojniceController {
 
     // Create string from list with every character
     private String fromListToString(ArrayList<String> ArrayList) {
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
         for (int i = 0; i < ArrayList.size(); i++) {
             buffer.append(ArrayList.get(i));
         }

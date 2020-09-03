@@ -9,78 +9,73 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
+        android:layout_gravity="start"
         android:orientation="horizontal">
 
         <TextView
+            style="@style/textChatMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/name"
-            style="@style/textChatMessage"
-            ></TextView>
+            android:text="@string/name" />
 
         <TextView
             android:id="@+id/nameMultiplayer"
+            style="@style/textChatSender"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/textChatSender"></TextView>
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
+        android:layout_gravity="start"
         android:orientation="horizontal">
 
         <TextView
+            style="@style/textChatMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/lastname"
-            style="@style/textChatMessage"
-            ></TextView>
+            android:text="@string/lastname" />
 
         <TextView
             android:id="@+id/lastNameMultiplayer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             style="@style/textChatSender"
-            ></TextView>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
+        android:layout_gravity="start"
         android:orientation="horizontal">
 
         <TextView
+            style="@style/textChatMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/username"
-            style="@style/textChatMessage"
-            ></TextView>
+            android:text="@string/username" />
 
         <TextView
             android:id="@+id/usernameMultiplayer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             style="@style/textChatSender"
-            ></TextView>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_gravity="center"
         android:layout_width="200dp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
 
-    <Button
-        style="@style/ButtonStyleMainMenu"
-        android:id="@+id/buttonChallenge"
-        android:width="200dp"
-        android:layout_gravity="center"
+        <Button
+            android:id="@+id/buttonChallenge"
+            style="@style/ButtonStyleMainMenu"
+            android:layout_gravity="center"
+            android:width="200dp"
 
-        android:text="@string/challenge"></Button>
+            android:text="@string/challenge" />
     </LinearLayout>
 
 
-    </LinearLayout>
+</LinearLayout>

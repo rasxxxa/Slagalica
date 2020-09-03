@@ -1,5 +1,6 @@
 package com.example.slagalica.Activities.MainMenu;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,11 +13,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.example.slagalica.Activities.MainMenu.MainActivity;
 import com.example.slagalica.Connection.ConnectionController;
 import com.example.slagalica.MultiPlayer.ShortPlayerInfo;
 import com.example.slagalica.R;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -30,8 +29,6 @@ public class Settings extends AppCompatActivity {
     private EditText editTextLastName;
     private EditText editTextUserName;
     private Boolean exists = null;
-    // just keep reference to prevent gc to clean it
-    private ValueEventListener valueEventListener;
     private ConnectionController connectionController;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,10 +85,6 @@ public class Settings extends AppCompatActivity {
         editor.apply();
     }
 
-    public Boolean getExists() {
-        return exists;
-    }
-
     public void setExists(Boolean exists) {
         this.exists = exists;
     }
@@ -106,7 +99,7 @@ public class Settings extends AppCompatActivity {
 
         try
         {
-            valueEventListener = connectionController.checkForUserInListOfPlayersListener(this,editTextUserName);
+            connectionController.checkForUserInListOfPlayersListener(this,editTextUserName);
         }catch (Exception e)
         {
             Toast.makeText(this,getResources().getString(R.string.connectionProblem),Toast.LENGTH_LONG).show();
@@ -118,6 +111,7 @@ public class Settings extends AppCompatActivity {
         checkUser();
 
     }
+    @SuppressLint("ApplySharedPref")
     public void apply(View view)
     {
         if (exists == null)

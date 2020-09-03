@@ -11,13 +11,12 @@ public class Column {
     public Column()
     {
         solution = "";
-        fields = new ArrayList<String>();
+        fields = new ArrayList<>();
     }
 
     // Adding specific field to the column
     public void add(String field)
     {
-
         fields.add(field);
     }
 

@@ -108,7 +108,7 @@ public class MojBrojController {
             threadBlock = true;
             try {
                 threadForCalculations.join();
-            } catch (Exception e) {
+            } catch (Exception ignored) {
 
             }
 
@@ -117,12 +117,12 @@ public class MojBrojController {
             Log.i("From calculation", finalCombination.get(i));
         }
         LinkedList<String> result = reversePolishNotation(finalCombination);
-        String resultEvaluation = "";
+        StringBuilder resultEvaluation = new StringBuilder();
         for (String element : result) {
-            resultEvaluation += element;
+            resultEvaluation.append(element);
         }
 
-        return resultEvaluation;
+        return resultEvaluation.toString();
 
     }
 

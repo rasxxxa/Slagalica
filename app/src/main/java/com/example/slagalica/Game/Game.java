@@ -20,19 +20,6 @@ public class Game {
     protected ArrayList<Message> messages;
     protected String gameId;
 
-    public Game(ArrayList<String>  game1Letters, ArrayList<Integer> game2Numbers, ArrayList<String> game3Words, ArrayList<Integer> game4Combination, ArrayList<Integer> game5QuestionsNumbers, Integer associationNumber, Player player1, Player player2, ArrayList<Integer> points1, ArrayList<Integer> points2, ArrayList<Message> messages) {
-        this.game1Letters = game1Letters;
-        this.game2Numbers = game2Numbers;
-        this.game3Words = game3Words;
-        this.game4Combination = game4Combination;
-        this.game5QuestionsNumbers = game5QuestionsNumbers;
-        this.associationNumber = associationNumber;
-        this.player1 = player1;
-        this.player2 = player2;
-        this.points1 = points1;
-        this.points2 = points2;
-        this.messages = messages;
-    }
 
     public Game()
     {
@@ -113,12 +100,35 @@ public class Game {
         this.associationNumber = associationNumber;
     }
 
-    public Player getPlayer1() {
-        return player1;
+    public Game(ArrayList<String> game1Letters, ArrayList<Integer> game2Numbers, ArrayList<String> game3Words, ArrayList<Integer> game4Combination, ArrayList<Integer> game5QuestionsNumbers, Integer associationNumber, Player player1, Player player2, ArrayList<Integer> points1, ArrayList<Integer> points2, ArrayList<Message> messages, String gameId) {
+        this.game1Letters = game1Letters;
+        this.game2Numbers = game2Numbers;
+        this.game3Words = game3Words;
+        this.game4Combination = game4Combination;
+        this.game5QuestionsNumbers = game5QuestionsNumbers;
+        this.associationNumber = associationNumber;
+        this.player1 = player1;
+        this.player2 = player2;
+        this.points1 = points1;
+        this.points2 = points2;
+        this.messages = messages;
+        this.gameId = gameId;
     }
 
     public void setPlayer1(Player player1) {
         this.player1 = player1;
+    }
+
+    public ArrayList<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(ArrayList<Message> messages) {
+        this.messages = messages;
+    }
+
+    public Player getPlayer1() {
+        return player1;
     }
 
     public Player getPlayer2() {
@@ -144,13 +154,4 @@ public class Game {
     public void setPoints2(ArrayList<Integer> points2) {
         this.points2 = points2;
     }
-
-    public ArrayList<Message> getMessages() {
-        return messages;
-    }
-
-    public void setMessages(ArrayList<Message> messages) {
-        this.messages = messages;
-    }
-
 }
